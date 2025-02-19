@@ -1,39 +1,14 @@
-
-import { 
-  ChevronLeft,
-  FileText,
-  User,
-  Calendar,
-  Check,
-  X,
-  Globe,
-  AlertTriangle,
-  Users,
-  CreditCard,
-  TestTube2,
-  Eye,
-  Plus,
-  Home,
-  Car,
-  Utensils,
-  Heart
-} from "lucide-react";
+import { ChevronLeft, FileText, User, Calendar, Check, X, Globe, AlertTriangle, Users, CreditCard, TestTube2, Eye, Plus, Home, Car, Utensils, Heart } from "lucide-react";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
-
 const Index = () => {
-  return (
-    <div className="min-h-screen flex flex-col">
+  return <div className="min-h-screen flex flex-col">
       {/* Top Navigation */}
       <header>
         <div className="epic-header">
           <div className="flex items-center gap-4">
             <span className="font-bold">Epic</span>
             <div className="flex items-center gap-2">
-              <input
-                type="text"
-                placeholder="Search (Ctrl+Space)"
-                className="px-2 py-1 rounded text-black w-64"
-              />
+              <input type="text" placeholder="Search (Ctrl+Space)" className="px-2 py-1 rounded text-black w-64" />
             </div>
           </div>
         </div>
@@ -52,7 +27,7 @@ const Index = () => {
 
       <div className="flex flex-1">
         {/* Left Sidebar - Patient Info */}
-        <div className="w-64 bg-white border-r border-[--epic-border] p-4 space-y-4">
+        <div className="w-64 bg-white border-r border-[--epic-border] p-4 space-y-4\n\nmake the background to this 003a63 with caf3ff font color b2e2ff">
           <div className="flex items-center gap-4">
             <div className="epic-patient-avatar">TT</div>
             <div>
@@ -450,8 +425,6 @@ const Index = () => {
           </ResizablePanel>
         </ResizablePanelGroup>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
