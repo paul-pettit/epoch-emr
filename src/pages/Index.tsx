@@ -133,8 +133,7 @@ const Index = () => {
 
         {/* Main Content with Resizable Panels */}
         <ResizablePanelGroup direction="horizontal" className="flex-1">
-          {/* Eye Exam Panel */}
-          <ResizablePanel defaultSize={75}>
+          <ResizablePanel defaultSize={60}>
             <div className="epic-exam-section">
               <div className="epic-exam-header">
                 <div className="flex gap-2">
@@ -151,12 +150,24 @@ const Index = () => {
                   <button className="epic-nav-button">Wrap-Up</button>
                 </div>
               </div>
-              <div className="epic-exam-content">
-                <div className="p-2">
-                  <div className="mb-2">
-                    <h2 className="text-sm font-bold">Eye Exam</h2>
-                  </div>
-
+              <div className="border-b border-gray-200">
+                <div className="flex gap-1 px-2">
+                  <button className="exam-tab exam-tab-active">
+                    Main Exam
+                  </button>
+                  <button className="exam-tab exam-tab-inactive">
+                    Contact Lenses
+                  </button>
+                  <button className="exam-tab exam-tab-inactive">
+                    Strabismus
+                  </button>
+                  <button className="exam-tab exam-tab-inactive">
+                    ROP
+                  </button>
+                </div>
+              </div>
+              <div className="flex">
+                <div className="flex-1 p-2">
                   <div className="space-y-3 text-xs">
                     <div className="exam-grid">
                       <div></div>
@@ -164,7 +175,6 @@ const Index = () => {
                       <div className="exam-column">OS</div>
                     </div>
 
-                    {/* External Section */}
                     <div className="exam-section">
                       <h3 className="exam-header">External</h3>
                       <div className="exam-grid">
@@ -181,7 +191,6 @@ const Index = () => {
                       </div>
                     </div>
 
-                    {/* Slit Lamp Section */}
                     <div className="exam-section">
                       <h3 className="exam-header">Slit Lamp</h3>
                       <div className="space-y-0.5">
@@ -210,7 +219,6 @@ const Index = () => {
                       </div>
                     </div>
 
-                    {/* Fundus Section */}
                     <div className="exam-section">
                       <h3 className="exam-header">Fundus</h3>
                       <div className="space-y-0.5">
@@ -237,7 +245,6 @@ const Index = () => {
                       </div>
                     </div>
 
-                    {/* Notes Textarea */}
                     <div>
                       <textarea 
                         className="w-full p-1 border rounded h-24 text-xs" 
@@ -246,14 +253,43 @@ const Index = () => {
                     </div>
                   </div>
                 </div>
+
+                <div className="w-48 conditions-list">
+                  <h3 className="text-xs font-bold mb-2">Conditions</h3>
+                  {[
+                    'Clear incision',
+                    'Debris in tear film',
+                    'Degeneration',
+                    'Descemet\'s folds',
+                    'Dystrophy',
+                    'Edema',
+                    'Epithelial defect',
+                    'Guttata',
+                    'Infiltrates',
+                    'Keratic precipitates',
+                    'Keratitis',
+                    'Krukenberg\'s spindle',
+                    'Neovascularization',
+                    'Opacity',
+                    'Keratoplasty',
+                    'PEE',
+                    'Scar',
+                    'Striae',
+                    'Trauma'
+                  ].map((condition) => (
+                    <div key={condition} className="condition-item">
+                      <input type="checkbox" className="h-3 w-3" />
+                      <span>{condition}</span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </ResizablePanel>
 
           <ResizableHandle className="w-1 bg-blue-500 hover:bg-blue-600 transition-colors" />
 
-          {/* Notes Panel */}
-          <ResizablePanel defaultSize={25}>
+          <ResizablePanel defaultSize={40}>
             <div className="epic-notes-section h-full">
               <div className="p-4">
                 <div className="flex justify-between items-center mb-4">

@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -57,7 +58,7 @@
   }
 
   .exam-field {
-    @apply text-xs p-0.5 h-6 border border-gray-300 rounded;
+    @apply text-xs p-0.5 h-5 border border-gray-300 rounded w-24;
   }
 
   .exam-label {
@@ -78,5 +79,25 @@
 
   .exam-column {
     @apply text-xs text-center font-medium text-gray-600 mb-1;
+  }
+
+  .exam-tab {
+    @apply px-3 py-1 text-xs border-t border-x rounded-t-md;
+  }
+
+  .exam-tab-active {
+    @apply bg-white border-gray-300;
+  }
+
+  .exam-tab-inactive {
+    @apply bg-gray-100 border-transparent text-gray-500;
+  }
+
+  .conditions-list {
+    @apply space-y-1 p-2 bg-white border-l border-gray-200;
+  }
+
+  .condition-item {
+    @apply flex items-center gap-2 text-xs;
   }
 }
