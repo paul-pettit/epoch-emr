@@ -1,4 +1,3 @@
-
 import { ChevronLeft, FileText, User, Calendar, Check, X, Globe, AlertTriangle, Users, CreditCard, TestTube2, Eye, Plus, Home, Car, Utensils, Heart } from "lucide-react";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 
@@ -158,215 +157,197 @@ const Index = () => {
                     <h2 className="text-lg font-bold">Eye Exam</h2>
                   </div>
 
-                  <div className="exam-grid">
-                    {/* Left Column */}
+                  <div className="space-y-6 text-sm">
+                    {/* External Section */}
                     <div>
                       <h3 className="font-bold mb-2">External</h3>
-                      <div className="space-y-2">
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Normal</span>
+                      <div className="grid grid-cols-3 gap-4 items-center">
+                        <div>
+                          <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
                         </div>
-                      </div>
-
-                      <h3 className="font-bold mt-6 mb-2">Slit Lamp</h3>
-                      <div className="space-y-2">
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Normal</span>
+                        <div className="flex justify-center">
+                          <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
                         </div>
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>White and quiet</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Deep and quiet</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Round and reactive</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>1- Nuclear sclerosis</span>
-                        </div>
-                      </div>
-
-                      <h3 className="font-bold mt-6 mb-2">Fundus</h3>
-                      <div className="space-y-2">
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Normal (Disc)</span>
-                        </div>
-                        <div className="exam-item">
-                          <span>C/D Ratio: 0.3</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Normal (Macula)</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Normal (Vessels)</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Normal (Periph)</span>
+                        <div>
+                          <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
                         </div>
                       </div>
                     </div>
 
-                    {/* Right Column - Conditions */}
+                    {/* Slit Lamp Section */}
                     <div>
-                      <h3 className="font-bold mb-2">Conditions</h3>
+                      <h3 className="font-bold mb-2">Slit Lamp</h3>
                       <div className="space-y-2">
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Clear incision</span>
-                          <span className="ml-auto text-gray-500">None</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Debris in tear film</span>
-                          <span className="ml-auto text-gray-500">None</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Degeneration</span>
-                          <span className="ml-auto text-gray-500">None</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Dendrite</span>
-                          <span className="ml-auto text-gray-500">None</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Descemet's folds</span>
-                          <div className="ml-auto flex gap-2">
-                            <button className="px-1 bg-blue-100 rounded">1+</button>
-                            <button className="px-1 bg-blue-500 text-white rounded">2+</button>
-                            <button className="px-1 bg-blue-100 rounded">3+</button>
-                            <button className="px-1 bg-blue-100 rounded">4+</button>
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>L/L</span>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
                           </div>
                         </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Dystrophy</span>
-                          <div className="ml-auto flex gap-1">
-                            <button className="px-1 bg-gray-100 rounded text-xs">ABMD</button>
-                            <button className="px-1 bg-gray-100 rounded text-xs">Fuchs'</button>
+
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>C/S</span>
+                            <input type="text" defaultValue="White and quiet" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="White and quiet" className="w-full p-1 border rounded" />
                           </div>
                         </div>
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Edema</span>
-                          <div className="ml-auto flex gap-2">
-                            <button className="px-1 bg-blue-100 rounded">1+</button>
-                            <button className="px-1 bg-blue-500 text-white rounded">2+</button>
-                            <button className="px-1 bg-blue-100 rounded">3+</button>
-                            <button className="px-1 bg-blue-100 rounded">4+</button>
+
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>Cornea</span>
+                            <input type="text" defaultValue="Edema, Corneal dystrophy" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="Edema, Corneal dystrophy" className="w-full p-1 border rounded" />
                           </div>
                         </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Epithelial defect</span>
-                          <span className="ml-auto text-gray-500">None</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" checked className="exam-checkbox" />
-                          <span>Guttata</span>
-                          <div className="ml-auto flex gap-2">
-                            <button className="px-1 bg-blue-100 rounded">1+</button>
-                            <button className="px-1 bg-blue-100 rounded">2+</button>
-                            <button className="px-1 bg-blue-500 text-white rounded">3+</button>
-                            <button className="px-1 bg-blue-100 rounded">4+</button>
+
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>AC</span>
+                            <input type="text" defaultValue="Deep and quiet" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="Deep and quiet" className="w-full p-1 border rounded" />
                           </div>
                         </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Infiltrates</span>
-                          <div className="ml-auto flex gap-1">
-                            <button className="px-1 bg-gray-100 rounded text-xs">Sterile</button>
-                            <button className="px-1 bg-gray-100 rounded text-xs">Subepi</button>
+
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>Iris</span>
+                            <input type="text" defaultValue="Round and reactive" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="Round and reactive" className="w-full p-1 border rounded" />
                           </div>
                         </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Keratic precipitates</span>
-                          <div className="ml-auto flex gap-2">
-                            <button className="px-1 bg-blue-100 rounded">1+</button>
-                            <button className="px-1 bg-blue-100 rounded">2+</button>
-                            <button className="px-1 bg-blue-100 rounded">3+</button>
-                            <button className="px-1 bg-blue-100 rounded">4+</button>
+
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>Lens</span>
+                            <input type="text" defaultValue="+1 Nuclear sclerosis" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="+1 Nuclear sclerosis" className="w-full p-1 border rounded" />
                           </div>
                         </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Keratitis</span>
-                          <span className="ml-auto text-gray-500">None</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Krukenberg's spindle</span>
-                          <span className="ml-auto text-gray-500">None</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Neovascularization</span>
-                          <span className="ml-auto text-gray-500">None</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Opacity</span>
-                          <div className="ml-auto flex gap-1">
-                            <button className="px-1 bg-gray-100 rounded text-xs">Central</button>
-                            <button className="px-1 bg-gray-100 rounded text-xs">Periph</button>
+
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>Vitreous</span>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
                           </div>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Keratoplasty</span>
-                          <div className="ml-auto flex gap-1">
-                            <button className="px-1 bg-gray-100 rounded text-xs">LKP</button>
-                            <button className="px-1 bg-gray-100 rounded text-xs">PKP</button>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
                           </div>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>PEE</span>
-                          <div className="ml-auto flex gap-2">
-                            <button className="px-1 bg-blue-100 rounded">1+</button>
-                            <button className="px-1 bg-blue-100 rounded">2+</button>
-                            <button className="px-1 bg-blue-100 rounded">3+</button>
-                            <button className="px-1 bg-blue-100 rounded">4+</button>
-                          </div>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Scar</span>
-                          <span className="ml-auto text-gray-500">None</span>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Striae</span>
-                          <div className="ml-auto flex gap-2">
-                            <button className="px-1 bg-blue-100 rounded">1+</button>
-                            <button className="px-1 bg-blue-100 rounded">2+</button>
-                            <button className="px-1 bg-blue-100 rounded">3+</button>
-                            <button className="px-1 bg-blue-100 rounded">4+</button>
-                          </div>
-                        </div>
-                        <div className="exam-item">
-                          <input type="checkbox" className="exam-checkbox" />
-                          <span>Trauma</span>
-                          <div className="ml-auto flex gap-1">
-                            <button className="px-1 bg-gray-100 rounded text-xs">Laceration</button>
-                            <button className="px-1 bg-gray-100 rounded text-xs">Foreign</button>
+                          <div>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
                           </div>
                         </div>
                       </div>
+                    </div>
+
+                    {/* Fundus Section */}
+                    <div>
+                      <h3 className="font-bold mb-2">Fundus</h3>
+                      <div className="space-y-2">
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>Disc</span>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>C/D Ratio</span>
+                            <input type="text" defaultValue="0.3" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="0.3" className="w-full p-1 border rounded" />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>Macula</span>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>Vessels</span>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-3 gap-4 items-center">
+                          <div className="flex gap-2 items-center">
+                            <span>Periph</span>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
+                          </div>
+                          <div className="flex justify-center">
+                            <input type="checkbox" checked className="h-4 w-4 rounded border-gray-300" />
+                          </div>
+                          <div>
+                            <input type="text" defaultValue="Normal" className="w-full p-1 border rounded" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Notes Textarea */}
+                    <div>
+                      <textarea 
+                        className="w-full p-2 border rounded h-32" 
+                        placeholder="Additional notes..."
+                      ></textarea>
                     </div>
                   </div>
                 </div>
