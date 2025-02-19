@@ -38,7 +38,7 @@ const Index = () => {
           <button className="epic-nav-button">Chart</button>
           <button className="epic-nav-button">Encounters</button>
         </div>
-      </div>
+      </header>
 
       {/* Patient Banner */}
       <div className="bg-[--epic-light-blue] p-4 border-b border-[--epic-border]">
