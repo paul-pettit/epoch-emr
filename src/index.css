@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,11 +32,11 @@
   }
   
   .epic-main-content {
-    @apply flex flex-1 min-h-[calc(100vh-8rem)];
+    @apply flex flex-1;
   }
   
   .epic-exam-section {
-    @apply flex-grow bg-white border-r border-[--epic-border] flex flex-col;
+    @apply flex-grow bg-white flex flex-col;
     height: calc(100vh - 12rem);
   }
   
@@ -48,11 +49,12 @@
   }
 
   .epic-notes-section {
-    @apply w-[400px] bg-white;
+    @apply bg-white overflow-y-auto;
+    height: calc(100vh - 12rem);
   }
 
   .epic-patient-avatar {
-    @apply h-20 w-20 bg-blue-100 rounded-full flex items-center justify-center text-3xl font-bold text-blue-800;
+    @apply h-12 w-12 bg-blue-100 rounded-full flex items-center justify-center text-xl font-bold text-blue-800;
   }
 
   .exam-grid {
@@ -66,13 +68,5 @@
 
   .exam-checkbox {
     @apply h-4 w-4 rounded border-gray-300;
-  }
-
-  .epic-tab {
-    @apply px-4 py-2 text-sm font-medium border-b-2 border-transparent hover:border-blue-500;
-  }
-
-  .epic-tab.active {
-    @apply border-blue-500 text-blue-600;
   }
 }
