@@ -1,4 +1,3 @@
-
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -109,12 +108,43 @@ const Index = () => {
                   </div>
                   <div className="exam-item">
                     <input type="checkbox" checked className="exam-checkbox" />
-                    <span>Edema, Corneal dystrophy 2+</span>
+                    <span>Deep and quiet</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" checked className="exam-checkbox" />
+                    <span>Round and reactive</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" checked className="exam-checkbox" />
+                    <span>1- Nuclear sclerosis</span>
+                  </div>
+                </div>
+
+                <h3 className="font-bold mt-6 mb-2">Fundus</h3>
+                <div className="space-y-2">
+                  <div className="exam-item">
+                    <input type="checkbox" checked className="exam-checkbox" />
+                    <span>Normal (Disc)</span>
+                  </div>
+                  <div className="exam-item">
+                    <span>C/D Ratio: 0.3</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" checked className="exam-checkbox" />
+                    <span>Normal (Macula)</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" checked className="exam-checkbox" />
+                    <span>Normal (Vessels)</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" checked className="exam-checkbox" />
+                    <span>Normal (Periph)</span>
                   </div>
                 </div>
               </div>
 
-              {/* Right Column */}
+              {/* Right Column - Conditions */}
               <div>
                 <h3 className="font-bold mb-2">Conditions</h3>
                 <div className="space-y-2">
@@ -124,19 +154,144 @@ const Index = () => {
                     <span className="ml-auto text-gray-500">None</span>
                   </div>
                   <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Debris in tear film</span>
+                    <span className="ml-auto text-gray-500">None</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Degeneration</span>
+                    <span className="ml-auto text-gray-500">None</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Dendrite</span>
+                    <span className="ml-auto text-gray-500">None</span>
+                  </div>
+                  <div className="exam-item">
                     <input type="checkbox" checked className="exam-checkbox" />
                     <span>Descemet's folds</span>
-                    <span className="ml-auto">2+</span>
+                    <div className="ml-auto flex gap-2">
+                      <button className="px-1 bg-blue-100 rounded">1+</button>
+                      <button className="px-1 bg-blue-500 text-white rounded">2+</button>
+                      <button className="px-1 bg-blue-100 rounded">3+</button>
+                      <button className="px-1 bg-blue-100 rounded">4+</button>
+                    </div>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Dystrophy</span>
+                    <div className="ml-auto flex gap-1">
+                      <button className="px-1 bg-gray-100 rounded text-xs">ABMD</button>
+                      <button className="px-1 bg-gray-100 rounded text-xs">Fuchs'</button>
+                    </div>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" checked className="exam-checkbox" />
+                    <span>Edema</span>
+                    <div className="ml-auto flex gap-2">
+                      <button className="px-1 bg-blue-100 rounded">1+</button>
+                      <button className="px-1 bg-blue-500 text-white rounded">2+</button>
+                      <button className="px-1 bg-blue-100 rounded">3+</button>
+                      <button className="px-1 bg-blue-100 rounded">4+</button>
+                    </div>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Epithelial defect</span>
+                    <span className="ml-auto text-gray-500">None</span>
                   </div>
                   <div className="exam-item">
                     <input type="checkbox" checked className="exam-checkbox" />
                     <span>Guttata</span>
-                    <span className="ml-auto">3+</span>
+                    <div className="ml-auto flex gap-2">
+                      <button className="px-1 bg-blue-100 rounded">1+</button>
+                      <button className="px-1 bg-blue-100 rounded">2+</button>
+                      <button className="px-1 bg-blue-500 text-white rounded">3+</button>
+                      <button className="px-1 bg-blue-100 rounded">4+</button>
+                    </div>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Infiltrates</span>
+                    <div className="ml-auto flex gap-1">
+                      <button className="px-1 bg-gray-100 rounded text-xs">Sterile</button>
+                      <button className="px-1 bg-gray-100 rounded text-xs">Subepi</button>
+                    </div>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Keratic precipitates</span>
+                    <div className="ml-auto flex gap-2">
+                      <button className="px-1 bg-blue-100 rounded">1+</button>
+                      <button className="px-1 bg-blue-100 rounded">2+</button>
+                      <button className="px-1 bg-blue-100 rounded">3+</button>
+                      <button className="px-1 bg-blue-100 rounded">4+</button>
+                    </div>
                   </div>
                   <div className="exam-item">
                     <input type="checkbox" className="exam-checkbox" />
                     <span>Keratitis</span>
                     <span className="ml-auto text-gray-500">None</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Krukenberg's spindle</span>
+                    <span className="ml-auto text-gray-500">None</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Neovascularization</span>
+                    <span className="ml-auto text-gray-500">None</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Opacity</span>
+                    <div className="ml-auto flex gap-1">
+                      <button className="px-1 bg-gray-100 rounded text-xs">Central</button>
+                      <button className="px-1 bg-gray-100 rounded text-xs">Periph</button>
+                    </div>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Keratoplasty</span>
+                    <div className="ml-auto flex gap-1">
+                      <button className="px-1 bg-gray-100 rounded text-xs">LKP</button>
+                      <button className="px-1 bg-gray-100 rounded text-xs">PKP</button>
+                    </div>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>PEE</span>
+                    <div className="ml-auto flex gap-2">
+                      <button className="px-1 bg-blue-100 rounded">1+</button>
+                      <button className="px-1 bg-blue-100 rounded">2+</button>
+                      <button className="px-1 bg-blue-100 rounded">3+</button>
+                      <button className="px-1 bg-blue-100 rounded">4+</button>
+                    </div>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Scar</span>
+                    <span className="ml-auto text-gray-500">None</span>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Striae</span>
+                    <div className="ml-auto flex gap-2">
+                      <button className="px-1 bg-blue-100 rounded">1+</button>
+                      <button className="px-1 bg-blue-100 rounded">2+</button>
+                      <button className="px-1 bg-blue-100 rounded">3+</button>
+                      <button className="px-1 bg-blue-100 rounded">4+</button>
+                    </div>
+                  </div>
+                  <div className="exam-item">
+                    <input type="checkbox" className="exam-checkbox" />
+                    <span>Trauma</span>
+                    <div className="ml-auto flex gap-1">
+                      <button className="px-1 bg-gray-100 rounded text-xs">Laceration</button>
+                      <button className="px-1 bg-gray-100 rounded text-xs">Foreign</button>
+                    </div>
                   </div>
                 </div>
               </div>
