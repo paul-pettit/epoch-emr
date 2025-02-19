@@ -1,3 +1,4 @@
+
 import { 
   ChevronLeft,
   FileText,
@@ -9,7 +10,7 @@ import {
   AlertTriangle,
   Users,
   CreditCard,
-  Flask,
+  TestTube2,
   Eye,
   Plus,
   Home,
@@ -103,7 +104,7 @@ const Index = () => {
             <div className="border-t border-[--epic-border] pt-2">
               <div className="text-sm font-semibold mb-1">Preferred Lab:</div>
               <div className="flex items-center gap-2">
-                <Flask className="h-4 w-4" />
+                <TestTube2 className="h-4 w-4" />
                 <span className="text-sm">Quest Diagnostics</span>
               </div>
             </div>
