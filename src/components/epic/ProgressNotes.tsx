@@ -16,7 +16,7 @@ const ProgressNotes = () => {
       {/* Static top section */}
       <div className="border-b border-gray-200 bg-[#003059]">
         <div className="flex items-center px-1 py-1">
-          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#E0E0E0] border border-[#BDBDBD] hover:bg-[#EEEEEE]">
+          <button className="flex items-center gap-1.5 px-2 py-1 bg-[#E0E0E0] border border-[#BDBDBD] hover:bg-[#EEEEEE]">
             <div className="bg-[#616161] rounded p-0.5">
               <FileText className="h-3 w-3 text-white" />
             </div>

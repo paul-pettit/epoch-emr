@@ -1,6 +1,6 @@
-
 import { ResizablePanel, ResizablePanelGroup, ResizableHandle } from "@/components/ui/resizable";
 import { LayoutGrid, FileText, BarChart, Eye, Circle, MoreHorizontal, Glasses, CrosshairIcon, TestTubes } from "lucide-react";
+import { useState } from "react";
 
 const ExamSection = () => {
   const conditionsData = [
@@ -12,7 +12,7 @@ const ExamSection = () => {
     { name: 'Dystrophy', buttons: ['ABMD', 'Fuchs'] },
     { name: 'Edema', buttons: ['1+', '2+', '3+', '4+'] },
     { name: 'Epithelial defect', buttons: [] },
-    { name: 'Guttata', buttons: ['1+', '2+', '3+', '4+'] },
+    { name: 'Guttata', buttons: [] },
     { name: 'Infiltrates', buttons: ['Sterile', 'Subepithelial'] },
     { name: 'Keratic precipitates', buttons: ['1+', '2+', '3+', '4+'] },
     { name: 'Keratitis', buttons: [] },
@@ -25,44 +25,58 @@ const ExamSection = () => {
     { name: 'Trauma', buttons: ['Laceration', 'Foreign'] }
   ];
 
+  const [checkedConditions, setCheckedConditions] = useState<string[]>([]);
+
+  const handleCheckboxChange = (conditionName: string) => {
+    if (checkedConditions.includes(conditionName)) {
+      setCheckedConditions(checkedConditions.filter((name) => name !== conditionName));
+    } else {
+      setCheckedConditions([...checkedConditions, conditionName]);
+    }
+  };
+
   return (
     <div className="flex-1 min-w-0">
       <div className="epic-exam-section h-full flex flex-col">
         <div className="flex items-center gap-0.5 px-1 py-1 border-b border-gray-200 bg-[#003059]">
-          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
+          <button className="flex items-center gap-1.5 px-2 py-1 bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
             <div className="bg-[#003059] rounded p-0.5">
               <LayoutGrid className="h-3 w-3 text-white" />
             </div>
             <span className="text-xs font-medium text-white">Zeiss Forum</span>
           </button>
           
-          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
+          <button className="flex items-center gap-1.5 px-2 py-1 bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
             <div className="bg-[#003059] rounded p-0.5">
               <FileText className="h-3 w-3 text-white" />
             </div>
             <span className="text-xs font-medium text-white">Plan</span>
           </button>
           
-          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
+          <button className="flex items-center gap-1.5 px-2 py-1 bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
             <div className="bg-[#003059] rounded p-0.5">
               <BarChart className="h-3 w-3 text-white" />
             </div>
             <span className="text-xs font-medium text-white">Chart Review</span>
           </button>
           
-          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#E0E0E0] border border-[#BDBDBD] hover:bg-[#EEEEEE]">
+          <button className="flex items-center gap-1.5 px-2 py-1 bg-[#E0E0E0] border border-[#BDBDBD] hover:bg-[#EEEEEE]">
             <div className="bg-[#616161] rounded p-0.5">
               <Eye className="h-3 w-3 text-white" />
             </div>
             <span className="text-xs font-medium text-[#212121]">Exam</span>
           </button>
           
-          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
+          <button className="flex items-center gap-1.5 px-2 py-1 bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
             <div className="bg-[#003059] rounded p-0.5">
               <Circle className="h-3 w-3 text-white" strokeWidth={3} />
             </div>
             <span className="text-xs font-medium text-white">Ambient Scribe</span>
           </button>
+        </div>
+
+        <div className="bg-[#e6eaee] text-[#00426c] rounded-md p-1 font-bold" style={{ border: '1px solid #00426c', borderStyle: 'inset', marginTop: '0px', marginLeft: '0px', marginBottom: '8px', textAlign: 'left' }}>
+          02/18/25 visit with Dr. Michael Commons - For Return Visit / Follow Up
         </div>
 
         <div className="w-full">
@@ -188,9 +202,19 @@ const ExamSection = () => {
               <h3 className="text-xs font-bold mb-2">Conditions</h3>
               <div className="space-y-1">
                 {conditionsData.map((condition) => (
-                  <div key={condition.name} className="flex items-center gap-2 group hover:bg-blue-50 p-1 rounded">
-                    <div className="flex items-center gap-2 min-w-[180px]">
-                      <input type="checkbox" className="h-3 w-3" />
+                  <div
+                    key={condition.name}
+                    className={`flex items-center gap-2 group hover:bg-blue-50 p-1 rounded`}
+                  >
+                    <div className={`flex items-center gap-2 min-w-[180px] ${
+                      checkedConditions.includes(condition.name) ? 'bg-blue-500 text-white' : ''
+                    }`}>
+                      <input
+                        type="checkbox"
+                        className="h-3 w-3"
+                        checked={checkedConditions.includes(condition.name)}
+                        onChange={() => handleCheckboxChange(condition.name)}
+                      />
                       <span className="text-xs">{condition.name}</span>
                       {condition.buttons.length > 0 && (
                         <button className="opacity-0 group-hover:opacity-100">
