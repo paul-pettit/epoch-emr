@@ -14,11 +14,13 @@ const ProgressNotes = () => {
   return (
     <div className="epic-notes-section h-full flex flex-col bg-white">
       {/* Static top section */}
-      <div className="border-b border-gray-200">
-        <div className="flex items-center px-4 py-2">
-          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#D3E4FD]/10">
-            <FileText className="h-4 w-4" style={{color: '#D3E4FD'}} />
-            <span className="text-sm">Notes</span>
+      <div className="border-b border-gray-200 bg-gray-100">
+        <div className="flex items-center px-1 py-1">
+          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#D3E4FD] border border-[#90CAF9] hover:bg-[#E3F2FD]">
+            <div className="bg-[#1976D2] rounded p-0.5">
+              <FileText className="h-3 w-3 text-white" />
+            </div>
+            <span className="text-xs font-medium text-[#0D47A1]">Notes</span>
           </button>
         </div>
       </div>
