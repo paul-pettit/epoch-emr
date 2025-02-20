@@ -5,8 +5,8 @@ import { ResizablePanel } from "@/components/ui/resizable";
 const ProgressNotes = () => {
   return (
     <ResizablePanel defaultSize={35}>
-      <div className="epic-notes-section">
-        <div className="p-4">
+      <div className="epic-notes-section h-full flex flex-col">
+        <div className="p-4 flex-1">
           <div className="flex justify-between items-center mb-4">
             <h2 className="text-lg font-bold">Progress Notes • 2/19/2025 02:21 PM</h2>
           </div>
@@ -36,18 +36,18 @@ const ProgressNotes = () => {
               <p className="text-gray-600 text-sm">No diagnosis found.</p>
             </div>
           </div>
+        </div>
 
-          <div className="fixed bottom-0 right-0 p-4 bg-white border-t border-[--epic-border] w-[400px]">
-            <div className="flex justify-end gap-2">
-              <button className="epic-nav-button">
-                <Check className="h-4 w-4" />
-                Accept
-              </button>
-              <button className="epic-nav-button">
-                <X className="h-4 w-4" />
-                Cancel
-              </button>
-            </div>
+        <div className="p-4 bg-white border-t border-[--epic-border]">
+          <div className="flex justify-end gap-2">
+            <button className="epic-nav-button">
+              <Check className="h-4 w-4" />
+              Accept
+            </button>
+            <button className="epic-nav-button">
+              <X className="h-4 w-4" />
+              Cancel
+            </button>
           </div>
         </div>
       </div>
