@@ -200,14 +200,14 @@ const ExamSection = () => {
           <ResizablePanel defaultSize={35} minSize={20}>
             <div className="p-2">
               <h3 className="text-xs font-bold mb-2">Conditions</h3>
-              <div className="space-y-1">
+              <div className="">
                 {conditionsData.map((condition) => (
                   <div
                     key={condition.name}
-                    className={`flex items-center gap-2 group hover:bg-blue-50 p-1 rounded`}
+                    className={`flex items-center gap-2 group hover:bg-blue-50 rounded`}
                   >
                     <div className={`flex items-center gap-2 min-w-[180px] ${
-                      checkedConditions.includes(condition.name) ? 'bg-blue-500 text-white' : ''
+                      checkedConditions.includes(condition.name) ? 'bg-blue-500 text-white p-0' : ''
                     }`}>
                       <input
                         type="checkbox"
