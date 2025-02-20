@@ -28,26 +28,26 @@ const ExamSection = () => {
   return (
     <div className="flex-1 min-w-0">
       <div className="epic-exam-section h-full flex flex-col">
-        <div className="flex items-center gap-0.5 px-1 py-1 border-b border-gray-200 bg-gray-100">
-          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#F2FCE2] border border-[#C5E0A5] hover:bg-[#E8F5D9]">
-            <div className="bg-[#689F38] rounded p-0.5">
+        <div className="flex items-center gap-0.5 px-1 py-1 border-b border-gray-200 bg-[#003059]">
+          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
+            <div className="bg-[#003059] rounded p-0.5">
               <LayoutGrid className="h-3 w-3 text-white" />
             </div>
-            <span className="text-xs font-medium text-[#33691E]">Zeiss Forum</span>
+            <span className="text-xs font-medium text-white">Zeiss Forum</span>
           </button>
           
-          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#FEC6A1] border border-[#FFAB91] hover:bg-[#FFD7C4]">
-            <div className="bg-[#E64A19] rounded p-0.5">
+          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
+            <div className="bg-[#003059] rounded p-0.5">
               <FileText className="h-3 w-3 text-white" />
             </div>
-            <span className="text-xs font-medium text-[#BF360C]">Plan</span>
+            <span className="text-xs font-medium text-white">Plan</span>
           </button>
           
-          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#D3E4FD] border border-[#90CAF9] hover:bg-[#E3F2FD]">
-            <div className="bg-[#1976D2] rounded p-0.5">
+          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
+            <div className="bg-[#003059] rounded p-0.5">
               <BarChart className="h-3 w-3 text-white" />
             </div>
-            <span className="text-xs font-medium text-[#0D47A1]">Chart Review</span>
+            <span className="text-xs font-medium text-white">Chart Review</span>
           </button>
           
           <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#E0E0E0] border border-[#BDBDBD] hover:bg-[#EEEEEE]">
@@ -57,11 +57,11 @@ const ExamSection = () => {
             <span className="text-xs font-medium text-[#212121]">Exam</span>
           </button>
           
-          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#FEC6A1] border border-[#FFAB91] hover:bg-[#FFD7C4]">
-            <div className="bg-[#E64A19] rounded p-0.5">
+          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#005791] border border-[#90CAF9] hover:bg-[#0068a8]">
+            <div className="bg-[#003059] rounded p-0.5">
               <Circle className="h-3 w-3 text-white" strokeWidth={3} />
             </div>
-            <span className="text-xs font-medium text-[#BF360C]">Ambient Scribe</span>
+            <span className="text-xs font-medium text-white">Ambient Scribe</span>
           </button>
         </div>
 
