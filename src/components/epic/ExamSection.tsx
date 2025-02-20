@@ -1,6 +1,6 @@
 
 import { ResizablePanel, ResizablePanelGroup, ResizableHandle } from "@/components/ui/resizable";
-import { MoreHorizontal } from "lucide-react";
+import { LayoutGrid, FileText, BarChart, Eye, Circle, MoreHorizontal } from "lucide-react";
 
 const ExamSection = () => {
   const conditionsData = [
@@ -28,28 +28,41 @@ const ExamSection = () => {
   return (
     <div className="flex-1 min-w-0">
       <div className="epic-exam-section h-full flex flex-col">
+        <div className="flex items-center gap-2 px-4 py-2 border-b border-gray-200">
+          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#FEF7CD]/10">
+            <LayoutGrid className="h-4 w-4" style={{color: '#FEF7CD'}} />
+            <span className="text-sm">Zeiss Forum</span>
+          </button>
+          
+          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#D946EF]/10">
+            <FileText className="h-4 w-4" style={{color: '#D946EF'}} />
+            <span className="text-sm">Plan</span>
+          </button>
+          
+          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#D3E4FD]/10">
+            <BarChart className="h-4 w-4" style={{color: '#D3E4FD'}} />
+            <span className="text-sm">Chart Review</span>
+          </button>
+          
+          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#8E9196]/10">
+            <Eye className="h-4 w-4" style={{color: '#8E9196'}} />
+            <span className="text-sm">Exam</span>
+          </button>
+          
+          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#D946EF]/10">
+            <div className="relative">
+              <Circle className="h-4 w-4" style={{color: '#D946EF', strokeWidth: 3}} />
+            </div>
+            <span className="text-sm">Ambient Scribe</span>
+          </button>
+        </div>
+
         <div className="w-full">
           <img 
             src="/lovable-uploads/12dd6138-d9ee-4770-9833-272b9bec4743.png" 
             alt="Eye Exam"
             className="h-8"
           />
-        </div>
-        <div className="border-b border-gray-200 w-full">
-          <div className="flex gap-1 px-2">
-            <button className="exam-tab exam-tab-active">
-              Main Exam
-            </button>
-            <button className="exam-tab exam-tab-inactive">
-              Contact Lenses
-            </button>
-            <button className="exam-tab exam-tab-inactive">
-              Strabismus
-            </button>
-            <button className="exam-tab exam-tab-inactive">
-              ROP
-            </button>
-          </div>
         </div>
         
         <ResizablePanelGroup direction="horizontal" className="flex flex-1">
