@@ -14,7 +14,9 @@ import {
   Mail,
   Calendar,
   X,
-  Search
+  Search,
+  ArrowUp,
+  MessageSquare
 } from "lucide-react";
 
 const EpicHeader = ({ openScribe }: { openScribe: () => void }) => {
@@ -22,21 +24,47 @@ const EpicHeader = ({ openScribe }: { openScribe: () => void }) => {
     <header className="bg-gradient-to-b from-[#1a3c5e] to-[#002244]">
       {/* Top row */}
       <div className="flex items-center gap-2 px-2 py-1 bg-[#003366] text-white">
+        <Menu className="h-4 w-4" />
         <img 
           src="/lovable-uploads/f2bc6dc5-ef17-406d-ba1d-2a750be0112e.png" 
           alt="Epoch"
           className="h-4"
         />
-        <Menu className="h-4 w-4 mx-1" />
-        <span className="text-xs font-medium mr-1">Application Server uppcpusrapp108 - PROD -</span>
+        <span className="text-xs font-medium mr-1">Application Server uppcpusrapp108 - FDE</span>
         <span className="text-xs font-medium">OPHTHALMOLOGY PPMC - DAVID COMMONS</span>
-        <div className="flex items-center ml-auto">
-          <Search className="h-4 w-4 absolute ml-2 text-gray-500" />
-          <input 
-            type="text" 
-            placeholder="Search (Ctrl+Space)" 
-            className="pl-8 pr-2 py-0.5 text-xs rounded text-black w-64 focus:outline-none focus:ring-1 focus:ring-blue-500"
-          />
+        
+        <div className="flex items-center ml-auto gap-4">
+          <div className="flex items-center">
+            <Search className="h-4 w-4 absolute ml-2 text-gray-500" />
+            <input 
+              type="text" 
+              placeholder="Search (Ctrl+Space)" 
+              className="pl-8 pr-2 py-0.5 text-xs rounded text-black w-48 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            />
+          </div>
+
+          <div className="flex items-center gap-3 bg-[#f5f5dc] px-3 py-0.5 rounded-sm">
+            <div className="flex items-center gap-1">
+              <ArrowUp className="h-4 w-4 text-red-600" />
+              <span className="text-xs text-red-600">42</span>
+              <span className="text-xs text-red-600 ml-0.5">Staff Message</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <PhoneCall className="h-4 w-4 text-red-600" />
+              <ArrowUp className="h-4 w-4 text-red-600" />
+              <span className="text-xs text-red-600">21</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <MessageSquare className="h-4 w-4 text-red-600" />
+              <ArrowUp className="h-4 w-4 text-red-600" />
+              <span className="text-xs text-red-600">8</span>
+            </div>
+            <div className="flex items-center gap-1">
+              <Mail className="h-4 w-4 text-red-600" />
+              <ArrowUp className="h-4 w-4 text-red-600" />
+              <span className="text-xs text-red-600">513</span>
+            </div>
+          </div>
         </div>
       </div>
 
