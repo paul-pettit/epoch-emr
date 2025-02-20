@@ -1,3 +1,4 @@
+
 import { ChevronLeft, FileText, Square, Circle, BarChart, User, Calendar, Check, X, Globe, AlertTriangle, Users, CreditCard, TestTube2, Eye, Plus, Home, Car, Utensils, Heart } from "lucide-react";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 
@@ -58,7 +59,8 @@ const Index = () => {
     </header>
 
     <div className="flex flex-1">
-      <div className="w-64 bg-[#003861] text-[#b2e2ff] border-r border-[--epic-border] p-4 space-y-4">
+      <div className="w-64 bg-[#003861] text-[#b2e2ff] border-r border-[--epic-border] pt-0 px-4 pb-4 space-y-4">
+        <div className="h-8" /> {/* Spacer to align with Eye Exam logo */}
         <div className="flex items-center gap-4">
           <div className="epic-patient-avatar">TT</div>
           <div>
