@@ -28,32 +28,40 @@ const ExamSection = () => {
   return (
     <div className="flex-1 min-w-0">
       <div className="epic-exam-section h-full flex flex-col">
-        <div className="flex items-center gap-2 px-4 py-2 border-b border-gray-200">
-          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#FEF7CD]/10">
-            <LayoutGrid className="h-4 w-4" style={{color: '#FEF7CD'}} />
-            <span className="text-sm">Zeiss Forum</span>
-          </button>
-          
-          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#D946EF]/10">
-            <FileText className="h-4 w-4" style={{color: '#D946EF'}} />
-            <span className="text-sm">Plan</span>
-          </button>
-          
-          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#D3E4FD]/10">
-            <BarChart className="h-4 w-4" style={{color: '#D3E4FD'}} />
-            <span className="text-sm">Chart Review</span>
-          </button>
-          
-          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#8E9196]/10">
-            <Eye className="h-4 w-4" style={{color: '#8E9196'}} />
-            <span className="text-sm">Exam</span>
-          </button>
-          
-          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#D946EF]/10">
-            <div className="relative">
-              <Circle className="h-4 w-4" style={{color: '#D946EF', strokeWidth: 3}} />
+        <div className="flex items-center gap-0.5 px-1 py-1 border-b border-gray-200 bg-gray-100">
+          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#F2FCE2] border border-[#C5E0A5] hover:bg-[#E8F5D9]">
+            <div className="bg-[#689F38] rounded p-0.5">
+              <LayoutGrid className="h-3 w-3 text-white" />
             </div>
-            <span className="text-sm">Ambient Scribe</span>
+            <span className="text-xs font-medium text-[#33691E]">Zeiss Forum</span>
+          </button>
+          
+          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#FEC6A1] border border-[#FFAB91] hover:bg-[#FFD7C4]">
+            <div className="bg-[#E64A19] rounded p-0.5">
+              <FileText className="h-3 w-3 text-white" />
+            </div>
+            <span className="text-xs font-medium text-[#BF360C]">Plan</span>
+          </button>
+          
+          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#D3E4FD] border border-[#90CAF9] hover:bg-[#E3F2FD]">
+            <div className="bg-[#1976D2] rounded p-0.5">
+              <BarChart className="h-3 w-3 text-white" />
+            </div>
+            <span className="text-xs font-medium text-[#0D47A1]">Chart Review</span>
+          </button>
+          
+          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#E0E0E0] border border-[#BDBDBD] hover:bg-[#EEEEEE]">
+            <div className="bg-[#616161] rounded p-0.5">
+              <Eye className="h-3 w-3 text-white" />
+            </div>
+            <span className="text-xs font-medium text-[#212121]">Exam</span>
+          </button>
+          
+          <button className="flex items-center gap-1.5 px-2 py-1 rounded bg-[#FEC6A1] border border-[#FFAB91] hover:bg-[#FFD7C4]">
+            <div className="bg-[#E64A19] rounded p-0.5">
+              <Circle className="h-3 w-3 text-white" strokeWidth={3} />
+            </div>
+            <span className="text-xs font-medium text-[#BF360C]">Ambient Scribe</span>
           </button>
         </div>
 
