@@ -99,4 +99,8 @@
   .condition-item {
     @apply flex items-center gap-2 text-xs;
   }
+
+  .epic-vertical-separator {
+    @apply w-1.5 h-full bg-[#003366];
+  }
 }

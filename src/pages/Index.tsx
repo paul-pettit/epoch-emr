@@ -165,9 +165,18 @@ const Index = () => {
         </div>
       </div>
 
+      <div className="epic-vertical-separator" />
+
       <ResizablePanelGroup direction="horizontal" className="flex-1">
         <ResizablePanel defaultSize={45}>
           <div className="epic-exam-section">
+            <div className="p-4">
+              <img 
+                src="/lovable-uploads/12dd6138-d9ee-4770-9833-272b9bec4743.png" 
+                alt="Eye Exam"
+                className="h-8 mb-4"
+              />
+            </div>
             <div className="border-b border-gray-200">
               <div className="flex gap-1 px-2">
                 <button className="exam-tab exam-tab-active">
