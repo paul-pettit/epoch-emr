@@ -66,18 +66,18 @@ const ExamSection = () => {
         </div>
 
         <div className="flex border-b border-gray-200">
-          <button className="flex-1 text-sm border-r border-gray-200 relative before:absolute before:top-0 before:left-0 before:right-0 before:h-0.5 before:bg-blue-500">
+          <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 relative before:absolute before:top-0 before:left-0 before:right-0 before:h-0.5 before:bg-blue-500">
             <span className="text-blue-600">Main Menu</span>
           </button>
-          <button className="flex-1 text-sm border-r border-gray-200 flex items-center justify-center gap-1 text-gray-600">
+          <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 gap-1 text-gray-600">
             <Glasses className="h-4 w-4" />
             <span>Contact Lens</span>
           </button>
-          <button className="flex-1 text-sm border-r border-gray-200 flex items-center justify-center gap-1 text-gray-600">
+          <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 gap-1 text-gray-600">
             <Eye className="h-4 w-4" />
             <span>Strabismus</span>
           </button>
-          <button className="flex-1 text-sm flex items-center justify-center gap-1 text-gray-600">
+          <button className="inline-flex items-center px-2 py-0.5 text-sm gap-1 text-gray-600">
             <TestTubes className="h-4 w-4" />
             <span>ROP</span>
           </button>
