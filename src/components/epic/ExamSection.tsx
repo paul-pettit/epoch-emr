@@ -12,7 +12,7 @@ const ExamSection = () => {
     { name: 'Dystrophy', buttons: ['ABMD', 'Fuchs'] },
     { name: 'Edema', buttons: ['1+', '2+', '3+', '4+'] },
     { name: 'Epithelial defect', buttons: [] },
-    { name: 'Guttata', buttons: [] },
+    { name: 'Guttata', buttons: ['1+', '2+', '3+', '4+'] },
     { name: 'Infiltrates', buttons: ['Sterile', 'Subepithelial'] },
     { name: 'Keratic precipitates', buttons: ['1+', '2+', '3+', '4+'] },
     { name: 'Keratitis', buttons: [] },
@@ -111,13 +111,13 @@ const ExamSection = () => {
               <div className="space-y-3 text-xs">
                 <div className="exam-grid">
                   <div></div>
-                  <div className="exam-column">OD</div>
-                  <div className="exam-column">OS</div>
+                  <div className="exam-column"></div>
+                  <div className="exam-column"></div>
                 </div>
 
                 <div className="exam-section">
                   <h3 className="exam-header">External</h3>
-                  <div className="exam-grid">
+                  <div className="exam-grid items-start">
                     <div className="flex gap-1 items-center">
                       <span className="exam-label">Ext</span>
                       <input type="text" defaultValue="Normal" className="exam-field flex-1" />
@@ -130,7 +130,7 @@ const ExamSection = () => {
                     </div>
                   </div>
                 </div>
-
+                <hr className="w-full" />
                 <div className="exam-section">
                   <h3 className="exam-header">Slit Lamp</h3>
                   <div className="space-y-0.5">
@@ -158,7 +158,7 @@ const ExamSection = () => {
                     ))}
                   </div>
                 </div>
-
+                <hr className="w-full" />
                 <div className="exam-section">
                   <h3 className="exam-header">Fundus</h3>
                   <div className="space-y-0.5">
@@ -235,11 +235,16 @@ const ExamSection = () => {
                       </div>
                     )}
                     <div className="ml-auto">
-                      <span className="text-xs text-gray-500">None</span>
+                      <span className="px-1 py-0 text-xs bg-gray-100 hover:bg-gray-200 rounded border border-gray-300">None</span>
                     </div>
                   </div>
                 ))}
               </div>
+              <img
+                src="/lovable-uploads/examimge.png"
+                alt="Clock"
+                className="h-24 w-full object-contain"
+              />
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>
