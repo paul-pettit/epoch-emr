@@ -16,11 +16,11 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="h-screen flex flex-col">
       <EpicHeader openScribe={openScribe} />
       <PatientSidebar />
 
-      <div className="flex flex-1">
+      <div className="flex flex-1 h-[calc(100vh-6rem)]">
         <div className="w-64" /> {/* Spacer for the sidebar */}
         <div className="epic-vertical-separator" />
         

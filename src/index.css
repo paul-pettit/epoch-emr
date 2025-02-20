@@ -13,7 +13,7 @@
   }
   
   body {
-    @apply bg-[#f5f5f5] text-[--epic-text];
+    @apply bg-white text-[--epic-text] min-h-screen;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 }
@@ -36,8 +36,7 @@
   }
   
   .epic-exam-section {
-    @apply flex-grow bg-white flex flex-col;
-    height: calc(100vh - 12rem);
+    @apply flex-grow bg-white flex flex-col h-full;
   }
   
   .epic-exam-content {
@@ -50,7 +49,6 @@
 
   .epic-notes-section {
     @apply bg-white overflow-y-auto;
-    height: calc(100vh - 12rem);
   }
 
   .epic-patient-avatar {
@@ -94,7 +92,7 @@
   }
 
   .conditions-list {
-    @apply space-y-1 p-2 bg-white border-l border-gray-200;
+    @apply space-y-1 p-2 bg-white border-l border-gray-200 h-full overflow-y-auto;
   }
 
   .condition-item {
