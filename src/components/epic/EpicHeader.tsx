@@ -1,4 +1,3 @@
-
 import { 
   AudioWaveform, 
   ChartBar, 
@@ -15,7 +14,10 @@ import {
   X,
   Search,
   ArrowUp,
-  MessageSquare
+  MessageSquare,
+  FolderOpen,
+  Layout,
+  Store
 } from "lucide-react";
 
 const EpicHeader = ({ openScribe }: { openScribe: () => void }) => {
@@ -69,29 +71,29 @@ const EpicHeader = ({ openScribe }: { openScribe: () => void }) => {
       {/* Second row - Navigation icons */}
       <div className="flex items-center gap-1 px-2 py-1 bg-[#002244] text-white text-xs">
         <button className="flex items-center gap-1 px-2 py-1 hover:bg-[#003366] rounded-sm">
-          <div className="rounded-full bg-blue-500 p-1">
-            <AudioWaveform className="h-3 w-3" />
+          <div className="rounded-full bg-[#FFDA63] p-1">
+            <AudioWaveform className="h-3 w-3"  />
           </div>
-        </button>
-        <div className="h-4 w-[1px] bg-gray-600 mx-1" />
-        <button className="nav-item">
-          <ChartBar className="h-3 w-3" />
-          <span>Chart</span>
-        </button>
-        <button className="nav-item">
-          <ClipboardList className="h-3 w-3" />
-          <span>Encounters</span>
-        </button>
-        <button className="nav-item">
-          <PhoneCall className="h-3 w-3" />
-          <span>Telephone Call</span>
-        </button>
-        <button className="nav-item">
-          <UserMinus className="h-3 w-3" />
+          </button>
+          <div className="h-4 w-[1px] bg-gray-600 mx-1" />
+          <button className="nav-item">
+            <ChartBar className="h-3 w-3" style={{ color: '#F06292' }} />
+            <span>Chart</span>
+          </button>
+          <button className="nav-item">
+            <ClipboardList className="h-3 w-3" style={{ color: '#87CEEB' }} />
+            <span>Encounters</span>
+          </button>
+          <button className="nav-item">
+            <PhoneCall className="h-3 w-3" style={{ color: '#90EE90' }} />
+            <span>Telephone Call</span>
+          </button>
+          <button className="nav-item">
+            <UserMinus className="h-3 w-3" style={{ color: '#98FB98' }} />
           <span>Mark Patients for Merge</span>
         </button>
         <button className="nav-item">
-          <Lock className="h-3 w-3" />
+          <Lock className="h-3 w-3" style={{ color: 'green' }} />
           <span>Secure</span>
         </button>
         <button className="nav-item">
@@ -106,17 +108,47 @@ const EpicHeader = ({ openScribe }: { openScribe: () => void }) => {
           <FileText className="h-3 w-3" />
           <span>Reports</span>
         </button>
+        <button className="nav-item">
+          <FolderOpen className="h-3 w-3" />
+          <span>Open Case</span>
+        </button>
+        <button className="nav-item">
+          <Layout className="h-3 w-3" />
+          <span>Snapboard</span>
+        </button>
+        <button className="nav-item">
+          <Store className="h-3 w-3" />
+          <span>OR Marketplace</span>
+        </button>
+        {/* New elements */}
+        <div className="ml-auto flex items-center gap-2">
+          {/* Notifications */}
+          <div className="relative">
+            <Bell className="h-5 w-5 text-white cursor-pointer" />
+            <span className="absolute top-[-4px] right-[-4px] bg-red-500 text-white text-[0.6rem] rounded-full px-1">
+              42
+            </span>
+          </div>
+          {/* Profile */}
+          <div className="relative">
+            <div className="rounded-full h-6 w-6 bg-gray-400 text-white flex items-center justify-center cursor-pointer">
+              BK
+            </div>
+          </div>
+          {/* Logout */}
+          <button className="text-xs text-white hover:underline">Log Out</button>
+        </div>
       </div>
 
       {/* Third row - Home bar and patient tab */}
       <div className="flex items-center gap-1 px-2 py-1 bg-[#001833] text-white text-xs">
-        <button className="nav-item">
+        <button className="flex items-center gap-1 px-3 py-1 rounded-md bg-[#003366]">
           <Home className="h-3 w-3" />
         </button>
-        <button className="nav-item">
+        <button className="flex items-center gap-1 px-3 py-1 rounded-md bg-[#003366]">
           <Mail className="h-3 w-3" />
         </button>
-        <button className="nav-item">
+        <button className="flex items-center gap-1 px-3 py-1 rounded-md bg-[#003366]">
           <Calendar className="h-3 w-3" />
         </button>
         <div className="ml-2 flex items-center bg-[#003366] rounded-t-md px-3 py-1">

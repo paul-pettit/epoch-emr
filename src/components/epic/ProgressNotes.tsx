@@ -26,9 +26,17 @@ const ProgressNotes = () => {
       </div>
 
       <div className="flex-none p-4">
-        <div className="flex justify-between items-center mb-4">
+        <div className="bg-[#eaecee]" style={{paddingTop: '0'}}>
+          <img
+            src="/lovable-uploads/menu2.png"
+            alt="Create Note"
+            className="h-6 object-contain"
+            style={{ display: 'block', marginLeft: '0', marginTop: '0' }}
+          />
+        </div>
+        <div className="flex justify-between items-center mb-4 bg-white">
           <div className="flex items-center gap-2">
-            <h2 className="text-[#004d92] font-bold">My Note</h2>
+             <h2 className="text-[#004d92] font-bold">My Note</h2>
           </div>
           <div className="flex gap-2">
             <Share2 className="w-4 h-4 text-[#666]" />
