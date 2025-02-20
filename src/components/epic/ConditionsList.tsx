@@ -5,6 +5,7 @@ const ConditionsList = () => {
   return (
     <div className="flex-1 min-w-0">
       <div className="conditions-list h-full">
+        <div className="h-[84px]"></div>
         <h3 className="text-xs font-bold mb-2">Conditions</h3>
         {[
           'Clear incision',
