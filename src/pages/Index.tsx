@@ -1,3 +1,4 @@
+
 import { ChevronLeft, FileText, User, Calendar, Check, X, Globe, AlertTriangle, Users, CreditCard, TestTube2, Eye, Plus, Home, Car, Utensils, Heart } from "lucide-react";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 
@@ -13,26 +14,31 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#003366] text-white p-2 flex items-center gap-2">
-        <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
-          <ChevronLeft className="h-4 w-4" />
-        </button>
-        <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
-          <FileText className="h-4 w-4" />
-          <span>Zeiss Forum</span>
-        </button>
-        <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
-          <span>Plan</span>
-        </button>
-        <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
-          <span>Chart Review</span>
-        </button>
-        <button className="flex items-center gap-1 px-3 py-1.5 bg-blue-700 rounded transition-colors">
-          <span>Exam</span>
-        </button>
-        <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
-          <span>Wrap-Up</span>
-        </button>
+      <div className="bg-[#003366] text-white p-2 flex">
+        {/* Add a spacer div that matches the width of the patient info sidebar */}
+        <div className="w-64"></div>
+        {/* Navigation buttons container */}
+        <div className="flex items-center gap-2">
+          <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+            <ChevronLeft className="h-4 w-4" />
+          </button>
+          <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+            <FileText className="h-4 w-4" />
+            <span>Zeiss Forum</span>
+          </button>
+          <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+            <span>Plan</span>
+          </button>
+          <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+            <span>Chart Review</span>
+          </button>
+          <button className="flex items-center gap-1 px-3 py-1.5 bg-blue-700 rounded transition-colors">
+            <span>Exam</span>
+          </button>
+          <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+            <span>Wrap-Up</span>
+          </button>
+        </div>
       </div>
     </header>
 
