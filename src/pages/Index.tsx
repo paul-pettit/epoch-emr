@@ -42,6 +42,10 @@ const Index = () => {
             <Circle className="h-4 w-4 text-teal-400" />
             <span>Wrap-Up</span>
           </button>
+          <button className="epic-nav-button border-t-[3px] border-t-[#fc5478] rounded-none">
+            <Circle className="h-4 w-4 text-[#fc5478] stroke-[3]" />
+            <span>Ambient Scribe</span>
+          </button>
         </div>
       </div>
     </header>
