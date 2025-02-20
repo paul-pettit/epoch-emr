@@ -1,10 +1,9 @@
-
 import { ResizablePanel } from "@/components/ui/resizable";
 
 const ExamSection = () => {
   return (
-    <ResizablePanel defaultSize={45}>
-      <div className="epic-exam-section">
+    <div className="flex-1 min-w-0">
+      <div className="epic-exam-section h-full">
         <div>
           <img 
             src="/lovable-uploads/12dd6138-d9ee-4770-9833-272b9bec4743.png" 
@@ -117,7 +116,7 @@ const ExamSection = () => {
           </div>
         </div>
       </div>
-    </ResizablePanel>
+    </div>
   );
 };
 

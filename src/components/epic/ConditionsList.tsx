@@ -3,7 +3,7 @@ import { ResizablePanel } from "@/components/ui/resizable";
 
 const ConditionsList = () => {
   return (
-    <ResizablePanel defaultSize={20} minSize={15}>
+    <div className="flex-1 min-w-0">
       <div className="conditions-list h-full">
         <h3 className="text-xs font-bold mb-2">Conditions</h3>
         {[
@@ -33,7 +33,7 @@ const ConditionsList = () => {
           </div>
         ))}
       </div>
-    </ResizablePanel>
+    </div>
   );
 };
 

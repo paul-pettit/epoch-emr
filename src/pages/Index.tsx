@@ -1,5 +1,5 @@
 
-import { ResizableHandle, ResizablePanelGroup } from "@/components/ui/resizable";
+import { ResizableHandle, ResizablePanelGroup, ResizablePanel } from "@/components/ui/resizable";
 import EpicHeader from "@/components/epic/EpicHeader";
 import PatientSidebar from "@/components/epic/PatientSidebar";
 import ExamSection from "@/components/epic/ExamSection";
@@ -24,11 +24,17 @@ const Index = () => {
         <div className="epic-vertical-separator" />
         
         <ResizablePanelGroup direction="horizontal" className="flex-1">
-          <ExamSection />
+          <ResizablePanel defaultSize={65} minSize={0}>
+            <div className="h-full flex">
+              <ExamSection />
+              <div className="w-1 bg-gray-200" />
+              <ConditionsList />
+            </div>
+          </ResizablePanel>
           <ResizableHandle className="w-1 bg-gray-200 hover:bg-gray-300 transition-colors" />
-          <ConditionsList />
-          <ResizableHandle className="w-1 bg-gray-200 hover:bg-gray-300 transition-colors" />
-          <ProgressNotes />
+          <ResizablePanel defaultSize={35}>
+            <ProgressNotes />
+          </ResizablePanel>
         </ResizablePanelGroup>
       </div>
     </div>
