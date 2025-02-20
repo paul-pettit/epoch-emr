@@ -1,6 +1,4 @@
-
 import { 
-  Menu, 
   AudioWaveform, 
   ChartBar, 
   ClipboardList, 
@@ -23,12 +21,11 @@ const EpicHeader = ({ openScribe }: { openScribe: () => void }) => {
   return (
     <header className="bg-gradient-to-b from-[#1a3c5e] to-[#002244]">
       {/* Top row */}
-      <div className="flex items-center gap-2 px-2 py-1 bg-[#003366] text-white">
-        <Menu className="h-4 w-4 text-[#bb003a]" />
+      <div className="flex items-center gap-2 px-0 py-1 bg-[#003366] text-white">
         <img 
-          src="/lovable-uploads/f2bc6dc5-ef17-406d-ba1d-2a750be0112e.png" 
+          src="/lovable-uploads/f93e6fe5-b95c-469a-b5a9-5e8190139ac4.png" 
           alt="Epoch"
-          className="h-4"
+          className="h-6"
         />
         <span className="text-xs font-medium mr-1">Application Server uppcpusrapp108 - FDE</span>
         <span className="text-xs font-medium">OPHTHALMOLOGY PPMC - DAVID COMMONS</span>
