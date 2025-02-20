@@ -1,3 +1,4 @@
+
 import { ChevronLeft, FileText, Square, Circle, BarChart, User, Calendar, Check, X, Globe, AlertTriangle, Users, CreditCard, TestTube2, Eye, Plus, Home, Car, Utensils, Heart } from "lucide-react";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 
@@ -13,7 +14,7 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#003366] text-white p-2 flex">
+      <div className="bg-[#005593] text-white p-2 flex">
         {/* Add a spacer div that matches the width of the patient info sidebar */}
         <div className="w-64"></div>
         {/* Navigation buttons container */}

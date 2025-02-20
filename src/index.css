@@ -23,7 +23,7 @@
   }
   
   .epic-nav-button {
-    @apply flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 transition-colors;
+    @apply flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 transition-colors text-[10px];
   }
 
   .epic-top-nav {
