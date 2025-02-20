@@ -1,9 +1,15 @@
-
 import { ChevronLeft, FileText, Square, Circle, BarChart, User, Calendar, Check, X, Globe, AlertTriangle, Users, CreditCard, TestTube2, Eye, Plus, Home, Car, Utensils, Heart } from "lucide-react";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 
 const Index = () => {
+  const openScribe = () => {
+    window.open(
+      'https://scribe.athelas.com',
+      'Athelas Scribe',
+      'width=1280,height=720,menubar=no,toolbar=no,location=no,status=no'
+    );
+  };
+
   return <div className="min-h-screen flex flex-col">
     {/* Top Navigation */}
     <header>
@@ -43,21 +49,13 @@ const Index = () => {
             <Circle className="h-4 w-4 text-teal-400" />
             <span>Wrap-Up</span>
           </button>
-          <Dialog>
-            <DialogTrigger asChild>
-              <button className="epic-nav-button border-t-[3px] border-t-[#fc5478] rounded-none">
-                <Circle className="h-4 w-4 text-[#fc5478] stroke-[3]" />
-                <span>Ambient Scribe</span>
-              </button>
-            </DialogTrigger>
-            <DialogContent className="max-w-[1280px] p-0">
-              <iframe 
-                src="https://scribe.athelas.com" 
-                className="w-[1280px] h-[720px] border-none"
-                title="Athelas Scribe"
-              />
-            </DialogContent>
-          </Dialog>
+          <button 
+            onClick={openScribe}
+            className="epic-nav-button border-t-[3px] border-t-[#fc5478] rounded-none"
+          >
+            <Circle className="h-4 w-4 text-[#fc5478] stroke-[3]" />
+            <span>Ambient Scribe</span>
+          </button>
         </div>
       </div>
     </header>
