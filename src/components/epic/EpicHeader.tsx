@@ -24,7 +24,7 @@ const EpicHeader = ({ openScribe }: { openScribe: () => void }) => {
     <header className="bg-gradient-to-b from-[#1a3c5e] to-[#002244]">
       {/* Top row */}
       <div className="flex items-center gap-2 px-2 py-1 bg-[#003366] text-white">
-        <Menu className="h-4 w-4" />
+        <Menu className="h-4 w-4 text-[#bb003a]" />
         <img 
           src="/lovable-uploads/f2bc6dc5-ef17-406d-ba1d-2a750be0112e.png" 
           alt="Epoch"
