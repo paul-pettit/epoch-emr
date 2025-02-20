@@ -3,7 +3,7 @@ import { Globe, Circle, Users, CreditCard, TestTube2, Eye, Calendar, Plus, Chevr
 
 const PatientSidebar = () => {
   return (
-    <div className="fixed left-0 top-[3.5rem] bottom-0 w-64 bg-[#003861] text-[#b2e2ff] border-r border-[--epic-border] flex flex-col">
+    <div className="w-64 bg-[#003861] text-[#b2e2ff] border-r border-[--epic-border] flex flex-col">
       <div className="flex-1 p-4 space-y-4">
         <div className="flex items-center gap-4">
           <div className="epic-patient-avatar">TT</div>

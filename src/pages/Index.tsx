@@ -19,7 +19,7 @@ const Index = () => {
     <div className="h-screen flex flex-col">
       <EpicHeader openScribe={openScribe} />
       
-      <div className="flex flex-1 h-[calc(100vh-7.5rem)]">
+      <div className="flex flex-1">
         <PatientSidebar />
         <div className="epic-vertical-separator" />
         
