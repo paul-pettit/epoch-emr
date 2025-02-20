@@ -1,4 +1,4 @@
-import { ChevronLeft, FileText, Square, Circle, BarChart, User, Calendar, Check, X, Globe, AlertTriangle, Users, CreditCard, TestTube2, Eye, Plus, Home, Car, Utensils, Heart } from "lucide-react";
+import { ChevronLeft, FileText, Square, Circle, BarChart, User, Calendar, Check, X, Globe, AlertTriangle, Users, CreditCard, TestTube2, Eye, Plus, Home, Car, Utensils, Heart, ChevronDown } from "lucide-react";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 
 const Index = () => {
@@ -55,106 +55,111 @@ const Index = () => {
           </button>
         </div>
       </div>
-      <div className="absolute left-0 top-[3.5rem] w-64 bg-[#003861] text-[#b2e2ff] border-r border-[--epic-border] p-4 space-y-4">
-        <div className="flex items-center gap-4">
-          <div className="epic-patient-avatar">TT</div>
-          <div>
-            <div className="font-semibold">TestPatient, Test</div>
-            <div className="text-sm opacity-90">Male • 82 y.o.</div>
-            <div className="text-sm opacity-90">DOB: 1/1/1943</div>
+      <div className="fixed left-0 top-[3.5rem] bottom-0 w-64 bg-[#003861] text-[#b2e2ff] border-r border-[--epic-border] flex flex-col">
+        <div className="flex-1 p-4 space-y-4 overflow-y-auto">
+          <div className="flex items-center gap-4">
+            <div className="epic-patient-avatar">TT</div>
+            <div>
+              <div className="font-semibold">TestPatient, Test</div>
+              <div className="text-sm opacity-90">Male • 82 y.o.</div>
+              <div className="text-sm opacity-90">DOB: 1/1/1943</div>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <div className="flex items-center gap-2">
+              <Globe className="h-4 w-4" />
+              <span className="text-sm">Interpreter: Not needed</span>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-green-500"></span>
+              <span className="text-sm">Code: Not on file</span>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1">Isolation Status:</div>
+              <span className="text-sm">None</span>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1">Providers Attending:</div>
+              <div className="flex items-center gap-2">
+                <Users className="h-4 w-4" />
+                <span className="text-sm">Dr. Alan Bruce Schorr</span>
+              </div>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1">Primary Coverage:</div>
+              <div className="flex items-center gap-2">
+                <CreditCard className="h-4 w-4" />
+                <span className="text-sm">Medicare</span>
+              </div>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1">Allergies:</div>
+              <div className="bg-yellow-100 p-2 rounded text-[#003861]">
+                <span>No known allergies</span>
+              </div>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1">Preferred Lab:</div>
+              <div className="flex items-center gap-2">
+                <TestTube2 className="h-4 w-4" />
+                <span className="text-sm">Quest Diagnostics</span>
+              </div>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1">Previous Eye Exams:</div>
+              <div className="flex items-center gap-2">
+                <Eye className="h-4 w-4" />
+                <span className="text-sm">Last: 3 months ago</span>
+              </div>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1">Next Visit:</div>
+              <div className="flex items-center gap-2">
+                <Calendar className="h-4 w-4" />
+                <span className="text-sm">6/27/2025</span>
+              </div>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="flex justify-between items-center mb-1">
+                <div className="text-sm font-semibold">Imaging & Procedures:</div>
+                <button className="text-[#b2e2ff] hover:text-white">
+                  <Plus className="h-4 w-4" />
+                </button>
+              </div>
+              <span className="text-sm">No recent procedures</span>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1">Social Determinants:</div>
+              <div className="flex justify-end gap-2 mt-2">
+                <div className="bg-[#F2FCE2] p-1 rounded">
+                  <Home className="h-4 w-4 text-green-700" />
+                </div>
+                <div className="bg-[#FEF7CD] p-1 rounded">
+                  <Car className="h-4 w-4 text-yellow-700" />
+                </div>
+                <div className="bg-[#FEC6A1] p-1 rounded">
+                  <Utensils className="h-4 w-4 text-orange-700" />
+                </div>
+                <div className="bg-[#D3E4FD] p-1 rounded">
+                  <Heart className="h-4 w-4 text-blue-700" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-
-        <div className="space-y-3">
-          <div className="flex items-center gap-2">
-            <Globe className="h-4 w-4" />
-            <span className="text-sm">Interpreter: Not needed</span>
-          </div>
-
-          <div className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-green-500"></span>
-            <span className="text-sm">Code: Not on file</span>
-          </div>
-
-          <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="text-sm font-semibold mb-1">Isolation Status:</div>
-            <span className="text-sm">None</span>
-          </div>
-
-          <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="text-sm font-semibold mb-1">Providers Attending:</div>
-            <div className="flex items-center gap-2">
-              <Users className="h-4 w-4" />
-              <span className="text-sm">Dr. Alan Bruce Schorr</span>
-            </div>
-          </div>
-
-          <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="text-sm font-semibold mb-1">Primary Coverage:</div>
-            <div className="flex items-center gap-2">
-              <CreditCard className="h-4 w-4" />
-              <span className="text-sm">Medicare</span>
-            </div>
-          </div>
-
-          <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="text-sm font-semibold mb-1">Allergies:</div>
-            <div className="bg-yellow-100 p-2 rounded text-[#003861]">
-              <span>No known allergies</span>
-            </div>
-          </div>
-
-          <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="text-sm font-semibold mb-1">Preferred Lab:</div>
-            <div className="flex items-center gap-2">
-              <TestTube2 className="h-4 w-4" />
-              <span className="text-sm">Quest Diagnostics</span>
-            </div>
-          </div>
-
-          <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="text-sm font-semibold mb-1">Previous Eye Exams:</div>
-            <div className="flex items-center gap-2">
-              <Eye className="h-4 w-4" />
-              <span className="text-sm">Last: 3 months ago</span>
-            </div>
-          </div>
-
-          <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="text-sm font-semibold mb-1">Next Visit:</div>
-            <div className="flex items-center gap-2">
-              <Calendar className="h-4 w-4" />
-              <span className="text-sm">6/27/2025</span>
-            </div>
-          </div>
-
-          <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="flex justify-between items-center mb-1">
-              <div className="text-sm font-semibold">Imaging & Procedures:</div>
-              <button className="text-[#b2e2ff] hover:text-white">
-                <Plus className="h-4 w-4" />
-              </button>
-            </div>
-            <span className="text-sm">No recent procedures</span>
-          </div>
-
-          <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="text-sm font-semibold mb-1">Social Determinants:</div>
-            <div className="flex justify-end gap-2 mt-2">
-              <div className="bg-[#F2FCE2] p-1 rounded">
-                <Home className="h-4 w-4 text-green-700" />
-              </div>
-              <div className="bg-[#FEF7CD] p-1 rounded">
-                <Car className="h-4 w-4 text-yellow-700" />
-              </div>
-              <div className="bg-[#FEC6A1] p-1 rounded">
-                <Utensils className="h-4 w-4 text-orange-700" />
-              </div>
-              <div className="bg-[#D3E4FD] p-1 rounded">
-                <Heart className="h-4 w-4 text-blue-700" />
-              </div>
-            </div>
-          </div>
+        <div className="p-2 flex justify-center border-t border-[#1d7e74] bg-[#002244] cursor-pointer hover:bg-[#001833] transition-colors">
+          <ChevronDown className="h-4 w-4" />
         </div>
       </div>
     </header>
