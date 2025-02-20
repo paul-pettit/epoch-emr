@@ -18,7 +18,7 @@ const ProgressNotes = () => {
         <div className="flex-none p-4">
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center gap-2">
-              <h2 className="text-[#333] font-bold">My Note</h2>
+              <h2 className="text-[#3b4954] font-bold">My Note</h2>
             </div>
             <div className="flex gap-2">
               <Share2 className="w-4 h-4 text-[#666]" />
@@ -29,7 +29,7 @@ const ProgressNotes = () => {
             </div>
           </div>
 
-          <div className="text-sm text-[#333] mb-4">Progress Notes • 2/19/2025 02:21 PM</div>
+          <div className="text-sm text-[#3b4954] mb-4">Progress Notes • 2/19/2025 02:21 PM</div>
 
           <div className="vintage-toolbar mb-2 flex items-center gap-1 bg-[#e4e4e4] p-1 border border-[#999]">
             <Bold className="w-4 h-4" />
