@@ -1,17 +1,18 @@
+
 import { ResizablePanel } from "@/components/ui/resizable";
 
 const ExamSection = () => {
   return (
     <div className="flex-1 min-w-0">
-      <div className="epic-exam-section h-full">
-        <div>
+      <div className="epic-exam-section h-full flex flex-col">
+        <div className="w-full">
           <img 
             src="/lovable-uploads/12dd6138-d9ee-4770-9833-272b9bec4743.png" 
             alt="Eye Exam"
             className="h-8"
           />
         </div>
-        <div className="border-b border-gray-200">
+        <div className="border-b border-gray-200 w-full">
           <div className="flex gap-1 px-2">
             <button className="exam-tab exam-tab-active">
               Main Exam
@@ -27,7 +28,8 @@ const ExamSection = () => {
             </button>
           </div>
         </div>
-        <div className="flex">
+        
+        <div className="flex flex-1">
           <div className="flex-1 p-2">
             <div className="space-y-3 text-xs">
               <div className="exam-grid">
@@ -113,6 +115,36 @@ const ExamSection = () => {
                 ></textarea>
               </div>
             </div>
+          </div>
+          <div className="w-1 bg-gray-200" />
+          <div className="flex-1 p-2">
+            <h3 className="text-xs font-bold mb-2">Conditions</h3>
+            {[
+              'Clear incision',
+              'Debris in tear film',
+              'Degeneration',
+              'Descemet\'s folds',
+              'Dystrophy',
+              'Edema',
+              'Epithelial defect',
+              'Guttata',
+              'Infiltrates',
+              'Keratic precipitates',
+              'Keratitis',
+              'Krukenberg\'s spindle',
+              'Neovascularization',
+              'Opacity',
+              'Keratoplasty',
+              'PEE',
+              'Scar',
+              'Striae',
+              'Trauma'
+            ].map((condition) => (
+              <div key={condition} className="condition-item">
+                <input type="checkbox" className="h-3 w-3" />
+                <span>{condition}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
