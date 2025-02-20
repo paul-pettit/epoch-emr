@@ -13,16 +13,26 @@ const Index = () => {
           </div>
         </div>
       </div>
-      <div className="epic-top-nav bg-gradient-to-r from-[--epic-darker-blue] to-[--epic-blue] text-white p-2">
-        <button className="p-1 hover:bg-blue-700 rounded">
+      <div className="bg-[#003366] text-white p-2 flex items-center gap-2">
+        <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+          <ChevronLeft className="h-4 w-4" />
+        </button>
+        <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
           <FileText className="h-4 w-4" />
+          <span>Zeiss Forum</span>
         </button>
-        <button className="p-1 hover:bg-blue-700 rounded">
-          <User className="h-4 w-4" />
+        <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+          <span>Plan</span>
         </button>
-        <span className="mx-2">|</span>
-        <button className="epic-nav-button">Chart</button>
-        <button className="epic-nav-button">Encounters</button>
+        <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+          <span>Chart Review</span>
+        </button>
+        <button className="flex items-center gap-1 px-3 py-1.5 bg-blue-700 rounded transition-colors">
+          <span>Exam</span>
+        </button>
+        <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+          <span>Wrap-Up</span>
+        </button>
       </div>
     </header>
 
@@ -131,25 +141,9 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Main Content with Resizable Panels */}
       <ResizablePanelGroup direction="horizontal" className="flex-1">
         <ResizablePanel defaultSize={45}>
           <div className="epic-exam-section">
-            <div className="epic-exam-header">
-              <div className="flex gap-2">
-                <button className="epic-nav-button">
-                  <ChevronLeft className="h-4 w-4" />
-                </button>
-                <button className="epic-nav-button">
-                  <FileText className="h-4 w-4" />
-                  Zeiss Forum
-                </button>
-                <button className="epic-nav-button">Plan</button>
-                <button className="epic-nav-button">Chart Review</button>
-                <button className="epic-nav-button">Exam</button>
-                <button className="epic-nav-button">Wrap-Up</button>
-              </div>
-            </div>
             <div className="border-b border-gray-200">
               <div className="flex gap-1 px-2">
                 <button className="exam-tab exam-tab-active">
