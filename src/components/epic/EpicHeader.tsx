@@ -1,3 +1,4 @@
+
 import { 
   AudioWaveform, 
   ChartBar, 
@@ -25,7 +26,7 @@ const EpicHeader = ({ openScribe }: { openScribe: () => void }) => {
         <img 
           src="/lovable-uploads/f93e6fe5-b95c-469a-b5a9-5e8190139ac4.png" 
           alt="Epoch"
-          className="h-6"
+          className="h-8"
         />
         <span className="text-xs font-medium mr-1">Application Server uppcpusrapp108 - FDE</span>
         <span className="text-xs font-medium">OPHTHALMOLOGY PPMC - DAVID COMMONS</span>
