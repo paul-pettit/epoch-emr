@@ -46,7 +46,7 @@ const ProgressNotes = () => {
               <textarea 
                 value={medications}
                 onChange={(e) => setMedications(e.target.value)}
-                className="w-full min-h-[100px] p-2 text-sm border border-[#999] bg-white text-[#333] font-mono"
+                className="w-full min-h-[100px] p-2 text-sm border border-[#999] bg-white text-[#333] font-sans"
               />
             </div>
 
@@ -55,7 +55,7 @@ const ProgressNotes = () => {
               <textarea 
                 value={physicalExam}
                 onChange={(e) => setPhysicalExam(e.target.value)}
-                className="w-full min-h-[60px] p-2 text-sm border border-[#999] bg-[#f8f8f8] text-[#666] font-mono"
+                className="w-full min-h-[60px] p-2 text-sm border border-[#999] bg-[#f8f8f8] text-[#666] font-sans"
               />
             </div>
 
@@ -64,7 +64,7 @@ const ProgressNotes = () => {
               <textarea 
                 value={testsOrdered}
                 onChange={(e) => setTestsOrdered(e.target.value)}
-                className="w-full min-h-[80px] p-2 text-sm border border-[#999] bg-[#f8f8f8] text-[#666] font-mono"
+                className="w-full min-h-[80px] p-2 text-sm border border-[#999] bg-[#f8f8f8] text-[#666] font-sans"
               />
             </div>
 
@@ -73,7 +73,7 @@ const ProgressNotes = () => {
               <textarea 
                 value={impression}
                 onChange={(e) => setImpression(e.target.value)}
-                className="w-full min-h-[60px] p-2 text-sm border border-[#999] bg-[#f8f8f8] text-[#666] font-mono"
+                className="w-full min-h-[60px] p-2 text-sm border border-[#999] bg-[#f8f8f8] text-[#666] font-sans"
               />
             </div>
           </div>
