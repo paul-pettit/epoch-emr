@@ -1,6 +1,8 @@
+
 import { Check, X, Bold, Italic, AlignLeft, Plus, Share2, Lock, Edit3, AlertTriangle, Mail } from "lucide-react";
 import { ResizablePanel } from "@/components/ui/resizable";
 import { useState } from "react";
+
 const ProgressNotes = () => {
   const [medications, setMedications] = useState(`62) Trazodone hcl 300 mg po tab 24hr, take 600 mg by mouth 2 times a day.
 63) Vitamin k 100 mcg po tabs, take 1 by mouth daily.
@@ -8,7 +10,9 @@ const ProgressNotes = () => {
   const [physicalExam, setPhysicalExam] = useState("Not recorded");
   const [testsOrdered, setTestsOrdered] = useState("No orders of the following type(s) were placed in this encounter: Procedures, Ophthalmology Photography, Medical Imaging, Referral, Ophthalmology Procedures, Supplies.");
   const [impression, setImpression] = useState("No diagnosis found.");
-  return <ResizablePanel defaultSize={35}>
+
+  return (
+    <ResizablePanel defaultSize={35}>
       <div className="epic-notes-section h-full flex flex-col bg-white">
         {/* Static top section */}
         <div className="flex-none p-4">
@@ -25,7 +29,11 @@ const ProgressNotes = () => {
             </div>
           </div>
 
-          <div className="text-sm text-[#004d92] mb-4">Progress Notes • 2/19/2025 02:21 PM</div>
+          <div className="text-sm text-[#004d92] mb-2">Progress Notes • 2/19/2025 02:21 PM</div>
+          
+          <div className="text-sm text-black mb-4">
+            Summary: <span className="text-[#666] border-b border-[#666] inline-block w-[85%] ml-1"></span>
+          </div>
 
           <div className="vintage-toolbar mb-2 flex items-center gap-1 bg-[#e4e4e4] p-1 border border-[#999]">
             <Bold className="w-4 h-4" />
@@ -80,6 +88,8 @@ const ProgressNotes = () => {
           </div>
         </div>
       </div>
-    </ResizablePanel>;
+    </ResizablePanel>
+  );
 };
+
 export default ProgressNotes;
