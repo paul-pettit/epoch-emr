@@ -1,6 +1,6 @@
 
 import { ResizablePanel, ResizablePanelGroup, ResizableHandle } from "@/components/ui/resizable";
-import { LayoutGrid, FileText, BarChart, Eye, Circle, MoreHorizontal } from "lucide-react";
+import { LayoutGrid, FileText, BarChart, Eye, Circle, MoreHorizontal, Glasses, CrosshairIcon, TestTubes } from "lucide-react";
 
 const ExamSection = () => {
   const conditionsData = [
@@ -61,8 +61,26 @@ const ExamSection = () => {
           <img 
             src="/lovable-uploads/12dd6138-d9ee-4770-9833-272b9bec4743.png" 
             alt="Eye Exam"
-            className="h-16"
+            className="h-12"
           />
+        </div>
+
+        <div className="flex border-b border-gray-200">
+          <button className="flex-1 px-4 py-2 text-sm hover:bg-gray-50 border-r border-gray-200">
+            <span>Main Menu</span>
+          </button>
+          <button className="flex-1 px-4 py-2 text-sm hover:bg-gray-50 border-r border-gray-200 flex items-center justify-center gap-1">
+            <Glasses className="h-4 w-4" />
+            <span>Contact Lens</span>
+          </button>
+          <button className="flex-1 px-4 py-2 text-sm hover:bg-gray-50 border-r border-gray-200 flex items-center justify-center gap-1">
+            <Eye className="h-4 w-4" />
+            <span>Strabismus</span>
+          </button>
+          <button className="flex-1 px-4 py-2 text-sm hover:bg-gray-50 flex items-center justify-center gap-1">
+            <TestTubes className="h-4 w-4" />
+            <span>ROP</span>
+          </button>
         </div>
         
         <ResizablePanelGroup direction="horizontal" className="flex flex-1">
