@@ -14,7 +14,8 @@ const ProgressNotes = () => {
   return (
     <ResizablePanel defaultSize={35}>
       <div className="epic-notes-section h-full flex flex-col bg-white">
-        <div className="p-4 flex-1">
+        {/* Static top section */}
+        <div className="flex-none p-4">
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center gap-2">
               <h2 className="text-[#333] font-bold">My Note</h2>
@@ -39,8 +40,11 @@ const ProgressNotes = () => {
               <option>Insert SmartText</option>
             </select>
           </div>
-          
-          <div className="space-y-4 [&>*+*]:border-t [&>*+*]:border-[#003366]">
+        </div>
+
+        {/* Scrollable section */}
+        <div className="flex-1 overflow-y-auto">
+          <div className="px-4 space-y-4 [&>*+*]:border-t [&>*+*]:border-[#003366]">
             <div className="pb-4">
               <h3 className="font-bold mb-2 text-[#333]">Medications:</h3>
               <textarea 
@@ -68,7 +72,7 @@ const ProgressNotes = () => {
               />
             </div>
 
-            <div className="pt-4">
+            <div className="pt-4 pb-4">
               <h3 className="font-bold mb-2 text-[#333]">Impression:</h3>
               <textarea 
                 value={impression}
@@ -79,7 +83,8 @@ const ProgressNotes = () => {
           </div>
         </div>
 
-        <div className="p-4 bg-[#e4e4e4] border-t border-[#999]">
+        {/* Static bottom section */}
+        <div className="flex-none p-4 bg-[#e4e4e4] border-t border-[#999]">
           <div className="flex justify-between items-center">
             <span className="text-xs text-[#666]">Sign when Signing Visit</span>
             <div className="flex gap-2">
