@@ -1,4 +1,5 @@
-import { Check, X, Bold, Italic, AlignLeft, Plus, Share2, Lock, Edit3, AlertTriangle, Mail } from "lucide-react";
+
+import { Check, X, Bold, Italic, AlignLeft, Plus, Share2, Lock, Edit3, AlertTriangle, Mail, FileText } from "lucide-react";
 import { ResizablePanel } from "@/components/ui/resizable";
 import { useState } from "react";
 
@@ -13,6 +14,15 @@ const ProgressNotes = () => {
   return (
     <div className="epic-notes-section h-full flex flex-col bg-white">
       {/* Static top section */}
+      <div className="border-b border-gray-200">
+        <div className="flex items-center px-4 py-2">
+          <button className="flex items-center gap-2 px-3 py-1.5 rounded hover:bg-[#D3E4FD]/10">
+            <FileText className="h-4 w-4" style={{color: '#D3E4FD'}} />
+            <span className="text-sm">Notes</span>
+          </button>
+        </div>
+      </div>
+
       <div className="flex-none p-4">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center gap-2">
