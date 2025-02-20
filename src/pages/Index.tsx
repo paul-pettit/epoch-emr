@@ -1,5 +1,4 @@
-
-import { ChevronLeft, FileText, User, Calendar, Check, X, Globe, AlertTriangle, Users, CreditCard, TestTube2, Eye, Plus, Home, Car, Utensils, Heart } from "lucide-react";
+import { ChevronLeft, FileText, Square, Circle, BarChart, User, Calendar, Check, X, Globe, AlertTriangle, Users, CreditCard, TestTube2, Eye, Plus, Home, Car, Utensils, Heart } from "lucide-react";
 import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable";
 
 const Index = () => {
@@ -22,20 +21,24 @@ const Index = () => {
           <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
             <ChevronLeft className="h-4 w-4" />
           </button>
-          <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
-            <FileText className="h-4 w-4" />
+          <button className="epic-nav-button border-t-[3px] border-t-[#FEF7CD] rounded-none">
+            <Square className="h-4 w-4 text-[#FEF7CD]" />
             <span>Zeiss Forum</span>
           </button>
-          <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+          <button className="epic-nav-button border-t-[3px] border-t-red-500 rounded-none">
+            <Circle className="h-4 w-4 text-red-500" />
             <span>Plan</span>
           </button>
-          <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+          <button className="epic-nav-button border-t-[3px] border-t-blue-400 rounded-none">
+            <Circle className="h-4 w-4 text-blue-400" />
             <span>Chart Review</span>
           </button>
-          <button className="flex items-center gap-1 px-3 py-1.5 bg-blue-700 rounded transition-colors">
+          <button className="epic-nav-button border-t-[3px] border-t-white bg-blue-700 rounded-none">
+            <BarChart className="h-4 w-4 text-white" />
             <span>Exam</span>
           </button>
-          <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
+          <button className="epic-nav-button border-t-[3px] border-t-teal-400 rounded-none">
+            <Circle className="h-4 w-4 text-teal-400" />
             <span>Wrap-Up</span>
           </button>
         </div>
