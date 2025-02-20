@@ -13,7 +13,7 @@ const ProgressNotes = () => {
 
   return (
     <ResizablePanel defaultSize={35}>
-      <div className="epic-notes-section h-full flex flex-col bg-[#f0f0f0]">
+      <div className="epic-notes-section h-full flex flex-col bg-white">
         <div className="p-4 flex-1">
           <div className="flex justify-between items-center mb-4">
             <div className="flex items-center gap-2">
@@ -40,8 +40,8 @@ const ProgressNotes = () => {
             </select>
           </div>
           
-          <div className="space-y-4">
-            <div>
+          <div className="space-y-4 [&>*+*]:border-t [&>*+*]:border-[#003366]">
+            <div className="pb-4">
               <h3 className="font-bold mb-2 text-[#333]">Medications:</h3>
               <textarea 
                 value={medications}
@@ -50,7 +50,7 @@ const ProgressNotes = () => {
               />
             </div>
 
-            <div>
+            <div className="pt-4 pb-4">
               <h3 className="font-bold mb-2 text-[#333]">Physical Examination:</h3>
               <textarea 
                 value={physicalExam}
@@ -59,7 +59,7 @@ const ProgressNotes = () => {
               />
             </div>
 
-            <div>
+            <div className="pt-4 pb-4">
               <h3 className="font-bold mb-2 text-[#333]">Tests Ordered:</h3>
               <textarea 
                 value={testsOrdered}
@@ -68,7 +68,7 @@ const ProgressNotes = () => {
               />
             </div>
 
-            <div>
+            <div className="pt-4">
               <h3 className="font-bold mb-2 text-[#333]">Impression:</h3>
               <textarea 
                 value={impression}
