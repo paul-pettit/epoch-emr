@@ -56,7 +56,7 @@ const Index = () => {
         </div>
       </div>
       <div className="fixed left-0 top-[3.5rem] bottom-0 w-64 bg-[#003861] text-[#b2e2ff] border-r border-[--epic-border] flex flex-col">
-        <div className="flex-1 p-4 space-y-4 overflow-y-auto">
+        <div className="flex-1 p-4 space-y-4">
           <div className="flex items-center gap-4">
             <div className="epic-patient-avatar">TT</div>
             <div>
@@ -78,8 +78,14 @@ const Index = () => {
             </div>
 
             <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-              <div className="text-sm font-semibold mb-1">Isolation Status:</div>
+              <div className="text-sm font-semibold mb-1">Isolation</div>
               <span className="text-sm">None</span>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="bg-[#f7ca2c] p-2 rounded text-[#003861]">
+                <span>Allergies (6)</span>
+              </div>
             </div>
 
             <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
@@ -99,14 +105,7 @@ const Index = () => {
             </div>
 
             <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-              <div className="text-sm font-semibold mb-1">Allergies:</div>
-              <div className="bg-yellow-100 p-2 rounded text-[#003861]">
-                <span>No known allergies</span>
-              </div>
-            </div>
-
-            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-              <div className="text-sm font-semibold mb-1">Preferred Lab:</div>
+              <div className="text-sm font-semibold mb-1">PREFERRED LAB:</div>
               <div className="flex items-center gap-2">
                 <TestTube2 className="h-4 w-4" />
                 <span className="text-sm">Quest Diagnostics</span>
@@ -114,7 +113,7 @@ const Index = () => {
             </div>
 
             <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-              <div className="text-sm font-semibold mb-1">Previous Eye Exams:</div>
+              <div className="text-sm font-semibold mb-1">PREVIOUS EYE EXAMS:</div>
               <div className="flex items-center gap-2">
                 <Eye className="h-4 w-4" />
                 <span className="text-sm">Last: 3 months ago</span>
@@ -122,7 +121,7 @@ const Index = () => {
             </div>
 
             <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-              <div className="text-sm font-semibold mb-1">Next Visit:</div>
+              <div className="text-sm font-semibold mb-1">NEXT VISIT:</div>
               <div className="flex items-center gap-2">
                 <Calendar className="h-4 w-4" />
                 <span className="text-sm">6/27/2025</span>
@@ -131,7 +130,7 @@ const Index = () => {
 
             <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
               <div className="flex justify-between items-center mb-1">
-                <div className="text-sm font-semibold">Imaging & Procedures:</div>
+                <div className="text-sm font-semibold text-[#507ab9]">IMAGING & PROCEDURES:</div>
                 <button className="text-[#b2e2ff] hover:text-white">
                   <Plus className="h-4 w-4" />
                 </button>
@@ -140,20 +139,27 @@ const Index = () => {
             </div>
 
             <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-              <div className="text-sm font-semibold mb-1">Social Determinants:</div>
+              <div className="text-sm font-semibold mb-1 text-[#bb64be]">OPHTHALMOLOGY PROBLEM LIST:</div>
+              <div className="text-sm mb-2">Other problems (3)</div>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1">My Pat List Reminders:</div>
+              <div className="text-sm">None</div>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1">MME/D:</div>
+              <div className="text-sm">&lt;50: 30 MME/Day</div>
+            </div>
+
+            <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
+              <div className="text-sm font-semibold mb-1 text-[#bb64be]">SOCIAL DETERMINANTS:</div>
               <div className="flex justify-end gap-2 mt-2">
-                <div className="bg-[#F2FCE2] p-1 rounded">
-                  <Home className="h-4 w-4 text-green-700" />
-                </div>
-                <div className="bg-[#FEF7CD] p-1 rounded">
-                  <Car className="h-4 w-4 text-yellow-700" />
-                </div>
-                <div className="bg-[#FEC6A1] p-1 rounded">
-                  <Utensils className="h-4 w-4 text-orange-700" />
-                </div>
-                <div className="bg-[#D3E4FD] p-1 rounded">
-                  <Heart className="h-4 w-4 text-blue-700" />
-                </div>
+                <Circle className="h-4 w-4 text-green-700" />
+                <Circle className="h-4 w-4 text-yellow-700" />
+                <Circle className="h-4 w-4 text-orange-700" />
+                <Circle className="h-4 w-4 text-blue-700" />
               </div>
             </div>
           </div>
