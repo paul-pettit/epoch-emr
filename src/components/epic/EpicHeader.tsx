@@ -6,7 +6,11 @@ const EpicHeader = ({ openScribe }: { openScribe: () => void }) => {
     <header className="relative">
       <div className="epic-header">
         <div className="flex items-center gap-4">
-          <span className="font-bold">Epic</span>
+          <img 
+            src="/lovable-uploads/f2bc6dc5-ef17-406d-ba1d-2a750be0112e.png" 
+            alt="Epoch"
+            className="h-6"
+          />
           <div className="flex items-center gap-2">
             <input type="text" placeholder="Search (Ctrl+Space)" className="px-2 py-1 rounded text-black w-64" />
           </div>
