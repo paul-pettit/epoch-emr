@@ -11,7 +11,6 @@ const Index = () => {
   };
 
   return <div className="min-h-screen flex flex-col">
-    {/* Top Navigation */}
     <header>
       <div className="epic-header">
         <div className="flex items-center gap-4">
@@ -22,9 +21,7 @@ const Index = () => {
         </div>
       </div>
       <div className="bg-[#005593] text-white p-2 flex">
-        {/* Add a spacer div that matches the width of the patient info sidebar */}
         <div className="w-64"></div>
-        {/* Navigation buttons container */}
         <div className="flex items-center gap-2">
           <button className="flex items-center gap-1 px-3 py-1.5 hover:bg-blue-700 rounded transition-colors">
             <ChevronLeft className="h-4 w-4" />
@@ -61,7 +58,6 @@ const Index = () => {
     </header>
 
     <div className="flex flex-1">
-      {/* Left Sidebar - Patient Info */}
       <div className="w-64 bg-[#003861] text-[#b2e2ff] border-r border-[--epic-border] p-4 space-y-4">
         <div className="flex items-center gap-4">
           <div className="epic-patient-avatar">TT</div>
@@ -170,11 +166,11 @@ const Index = () => {
       <ResizablePanelGroup direction="horizontal" className="flex-1">
         <ResizablePanel defaultSize={45}>
           <div className="epic-exam-section">
-            <div className="p-4">
+            <div>
               <img 
                 src="/lovable-uploads/12dd6138-d9ee-4770-9833-272b9bec4743.png" 
                 alt="Eye Exam"
-                className="h-8 mb-4"
+                className="h-8"
               />
             </div>
             <div className="border-b border-gray-200">
