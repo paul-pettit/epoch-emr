@@ -18,7 +18,7 @@ const ProgressNotes = () => {
             </div>
             <div className="flex gap-2">
               <Share2 className="w-4 h-4 text-[#666]" />
-              <Lock className="w-4 h-4 text-[#666]" />
+              <Lock className="w-4 h-4 text-[#004d92]" />
               <Edit3 className="w-4 h-4 text-[#666]" />
               <AlertTriangle className="w-4 h-4 text-[#666]" />
               <Mail className="w-4 h-4 text-[#666]" />
