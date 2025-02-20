@@ -1,7 +1,30 @@
 
 import { ResizablePanel } from "@/components/ui/resizable";
+import { MoreHorizontal } from "lucide-react";
 
 const ExamSection = () => {
+  const conditionsData = [
+    { name: 'Clear incision', buttons: [] },
+    { name: 'Debris in tear film', buttons: [] },
+    { name: 'Degeneration', buttons: ['Arcus', 'Pterygium'] },
+    { name: 'Dendrite', buttons: [] },
+    { name: 'Descemet\'s folds', buttons: ['1+', '2+', '3+', '4+'] },
+    { name: 'Dystrophy', buttons: ['ABMD', 'Fuchs'] },
+    { name: 'Edema', buttons: ['1+', '2+', '3+', '4+'] },
+    { name: 'Epithelial defect', buttons: [] },
+    { name: 'Guttata', buttons: ['1+', '2+', '3+', '4+'] },
+    { name: 'Infiltrates', buttons: ['Sterile', 'Subepithelial'] },
+    { name: 'Keratic precipitates', buttons: ['1+', '2+', '3+', '4+'] },
+    { name: 'Keratitis', buttons: [] },
+    { name: 'Krukenberg\'s spindle', buttons: [] },
+    { name: 'Neovascularization', buttons: ['Central', 'Periph'] },
+    { name: 'Keratoplasty', buttons: ['LKP', 'PKP'] },
+    { name: 'PEE', buttons: ['1+', '2+', '3+', '4+'] },
+    { name: 'Scar', buttons: ['LASIK'] },
+    { name: 'Striae', buttons: ['1+', '2+', '3+', '4+'] },
+    { name: 'Trauma', buttons: ['Laceration', 'Foreign'] }
+  ];
+
   return (
     <div className="flex-1 min-w-0">
       <div className="epic-exam-section h-full flex flex-col">
@@ -119,32 +142,36 @@ const ExamSection = () => {
           <div className="w-1 bg-gray-200" />
           <div className="flex-1 p-2">
             <h3 className="text-xs font-bold mb-2">Conditions</h3>
-            {[
-              'Clear incision',
-              'Debris in tear film',
-              'Degeneration',
-              'Descemet\'s folds',
-              'Dystrophy',
-              'Edema',
-              'Epithelial defect',
-              'Guttata',
-              'Infiltrates',
-              'Keratic precipitates',
-              'Keratitis',
-              'Krukenberg\'s spindle',
-              'Neovascularization',
-              'Opacity',
-              'Keratoplasty',
-              'PEE',
-              'Scar',
-              'Striae',
-              'Trauma'
-            ].map((condition) => (
-              <div key={condition} className="condition-item">
-                <input type="checkbox" className="h-3 w-3" />
-                <span>{condition}</span>
-              </div>
-            ))}
+            <div className="space-y-1">
+              {conditionsData.map((condition) => (
+                <div key={condition.name} className="flex items-center gap-2 group hover:bg-blue-50 p-1 rounded">
+                  <div className="flex items-center gap-2 min-w-[180px]">
+                    <input type="checkbox" className="h-3 w-3" />
+                    <span className="text-xs">{condition.name}</span>
+                    {condition.buttons.length > 0 && (
+                      <button className="opacity-0 group-hover:opacity-100">
+                        <MoreHorizontal className="h-3 w-3 text-gray-500" />
+                      </button>
+                    )}
+                  </div>
+                  {condition.buttons.length > 0 && (
+                    <div className="flex gap-1 flex-wrap">
+                      {condition.buttons.map((btn) => (
+                        <button
+                          key={btn}
+                          className="px-2 py-0.5 text-[10px] bg-gray-100 hover:bg-gray-200 rounded border border-gray-300"
+                        >
+                          {btn}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                  <div className="ml-auto">
+                    <span className="text-xs text-gray-500">None</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
