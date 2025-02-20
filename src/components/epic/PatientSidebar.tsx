@@ -30,7 +30,7 @@ const PatientSidebar = () => {
 
           <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
             <div className="text-sm font-semibold mb-1">Providers Attending</div>
-            <span className="text-sm">Dr. Alan Bruce Schorr</span>
+            <span className="text-sm">Dr. David Commons</span>
           </div>
 
           <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
