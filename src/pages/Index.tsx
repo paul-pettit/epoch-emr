@@ -18,10 +18,9 @@ const Index = () => {
   return (
     <div className="h-screen flex flex-col">
       <EpicHeader openScribe={openScribe} />
-      <PatientSidebar />
-
-      <div className="flex flex-1 h-[calc(100vh-6rem)]">
-        <div className="w-64" /> {/* Spacer for the sidebar */}
+      
+      <div className="flex flex-1 h-[calc(100vh-7.5rem)]">
+        <PatientSidebar />
         <div className="epic-vertical-separator" />
         
         <ResizablePanelGroup direction="horizontal" className="flex-1">
