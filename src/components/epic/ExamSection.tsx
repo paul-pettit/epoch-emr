@@ -61,7 +61,7 @@ const ExamSection = () => {
           <img 
             src="/lovable-uploads/12dd6138-d9ee-4770-9833-272b9bec4743.png" 
             alt="Eye Exam"
-            className="h-8"
+            className="h-16"
           />
         </div>
         
