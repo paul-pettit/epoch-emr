@@ -159,7 +159,7 @@ const ExamSection = () => {
                       {condition.buttons.map((btn) => (
                         <button
                           key={btn}
-                          className="px-2 py-0.5 text-[10px] bg-gray-100 hover:bg-gray-200 rounded border border-gray-300"
+                          className="px-1.5 py-0 text-xs bg-gray-100 hover:bg-gray-200 rounded border border-gray-300"
                         >
                           {btn}
                         </button>
