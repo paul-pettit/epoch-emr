@@ -1,4 +1,3 @@
-
 import { Globe, Circle, Users, CreditCard, TestTube2, Eye, Calendar, Plus, ChevronDown } from "lucide-react";
 const PatientSidebar = () => {
   return <div className="fixed left-0 top-[3.5rem] bottom-0 w-64 bg-[#003861] text-[#b2e2ff] border-r border-[--epic-border] flex flex-col">
@@ -29,11 +28,8 @@ const PatientSidebar = () => {
           </div>
 
           <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="text-sm font-semibold mb-1">Providers Attending:</div>
-            <div className="flex items-center gap-2">
-              <Users className="h-4 w-4" />
-              <span className="text-sm">Dr. Alan Bruce Schorr</span>
-            </div>
+            <div className="text-sm font-semibold mb-1">Providers Attending</div>
+            <span className="text-sm">Dr. Alan Bruce Schorr</span>
           </div>
 
           <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
