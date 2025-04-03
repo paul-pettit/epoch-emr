@@ -1,0 +1,13 @@
+# Netlify build configuration for Vite projects
+
+[build]
+  # Command to build the site
+  command = "npm run build"
+  
+  # Directory containing the built site files (relative to the repository root)
+  publish = "dist"
+
+[build.environment]
+  # Set the Node.js version (optional, but recommended)
+  # Check Netlify docs for currently supported versions
+  NODE_VERSION = "18"
