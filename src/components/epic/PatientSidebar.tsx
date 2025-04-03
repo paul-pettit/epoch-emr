@@ -57,7 +57,7 @@ const PatientSidebar = () => {
           </div>
 
           <div className="border-t border-opacity-20 border-[#b2e2ff] pt-2">
-            <div className="text-sm font-semibold mb-1">PREVIOUS EYE EXAMS:</div>
+            <div className="text-sm font-semibold mb-1">PREVOUS EXAMS:</div>
             <div className="flex items-center gap-2">
               <Eye className="h-4 w-4" />
               <span className="text-sm">Last: 3 months ago</span>

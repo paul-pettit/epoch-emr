@@ -1,6 +1,6 @@
 import { ResizablePanel, ResizablePanelGroup, ResizableHandle } from "@/components/ui/resizable";
 import { LayoutGrid, FileText, BarChart, Eye, Circle, MoreHorizontal, Glasses, CrosshairIcon, TestTubes, CheckCircle, ChevronDown, File, Settings, Search, RotateCcw, RotateCw, HelpCircle, PlusCircle } from "lucide-react";
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import ConditionList from "./ConditionList";
 
 const ExamSection = () => {
@@ -26,6 +26,7 @@ const ExamSection = () => {
     { name: 'Trauma', buttons: ['Laceration', 'Foreign'] }
   ]);
 
+  const [examType, setExamType] = useState<string>("Clinic Visit");
   const [checkedConditions, setCheckedConditions] = useState<string[]>([]);
 
   const handleCheckboxChange = useCallback((conditionName: string) => {
@@ -78,34 +79,56 @@ const ExamSection = () => {
           </button>
         </div>
 
-        <div className="bg-[#e6eaee] text-[#00426c] rounded-md p-1 font-bold" style={{ border: '1px solid #00426c', borderStyle: 'inset', marginTop: '0px', marginLeft: '0px', marginBottom: '8px', textAlign: 'left' }}>
-          02/18/25 visit with Dr. Michael Commons - For Return Visit / Follow Up
+        <div className="bg-[#e6eaee] text-[#00426c] rounded-md p-1 font-bold flex items-center justify-between" style={{ border: '1px solid #00426c', borderStyle: 'inset', marginTop: '0px', marginLeft: '0px', marginBottom: '8px', textAlign: 'left' }}>
+          <div>02/18/25 visit with Dr. Michael Commons - For Return Visit / Follow Up</div>
+          <div className="flex items-center">
+            <select
+              value={examType}
+              onChange={(e) => setExamType(e.target.value)}
+              className="ml-2 text-sm font-normal bg-white border border-gray-300 rounded px-2 py-0.5"
+            >
+              <option value="Clinic Visit">Clinic Visit</option>
+              <option value="Eye Exam">Eye Exam</option>
+            </select>
+          </div>
         </div>
 
         <div className="w-full">
-          <img 
-            src="/lovable-uploads/12dd6138-d9ee-4770-9833-272b9bec4743.png" 
-            alt="Eye Exam"
-            className="h-12"
-          />
+          {examType === "Eye Exam" ? (
+            <img
+              src="/lovable-uploads/eye_exam.png"
+              alt="Eye Exam"
+              className="h-12"
+            />
+          ) : (
+            <img
+              src="/lovable-uploads/clinic_visit.png"
+              alt="Clinic Visit"
+              className="h-12"
+            />
+          )}
         </div>
 
         <div className="flex border-b border-gray-200">
           <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 relative before:absolute before:top-0 before:left-0 before:right-0 before:h-0.5 before:bg-blue-500">
             <span className="text-blue-600">Main Menu</span>
           </button>
-          <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 gap-1 text-gray-600">
-            <Glasses className="h-4 w-4" />
-            <span>Contact Lens</span>
-          </button>
-          <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 gap-1 text-gray-600">
-            <Eye className="h-4 w-4" />
-            <span>Strabismus</span>
-          </button>
-          <button className="inline-flex items-center px-2 py-0.5 text-sm gap-1 text-gray-600">
-            <TestTubes className="h-4 w-4" />
-            <span>ROP</span>
-          </button>
+          {examType === "Eye Exam" && (
+            <>
+              <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 gap-1 text-gray-600">
+                <Glasses className="h-4 w-4" />
+                <span>Contact Lens</span>
+              </button>
+              <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 gap-1 text-gray-600">
+                <Eye className="h-4 w-4" />
+                <span>Strabismus</span>
+              </button>
+              <button className="inline-flex items-center px-2 py-0.5 text-sm gap-1 text-gray-600">
+                <TestTubes className="h-4 w-4" />
+                <span>ROP</span>
+              </button>
+            </>
+          )}
         </div>
         
         <ResizablePanelGroup direction="horizontal" className="flex flex-1">
@@ -126,124 +149,296 @@ const ExamSection = () => {
                   <div className="exam-column"></div>
                 </div>
 
-                <div className="exam-section">
-                  <h3 className="exam-header">External</h3>
-                  <div className="flex justify-between">
-                    <span className="text-center">Right</span>
-                    <span className="text-center">Left</span>
-                  </div>
-                  <div className="exam-grid items-start">
-                    <div className="flex gap-1 items-center justify-center">
-                      <span className="exam-label">Ext</span>
-                      <input type="text" id="external-right" defaultValue="Normal" className="exam-field flex-1" />
+                {examType === "Eye Exam" ? (
+                  <>
+                    <div className="exam-section">
+                      <h3 className="exam-header">Slit Lamp</h3>
+                      <div className="flex justify-between">
+                        <span>Right</span>
+                        <span>Left</span>
+                      </div>
+                      <div className="space-y-0.5">
+                        {[
+                          { label: 'L/L', value: 'Normal', id: 'slitlamp-ll' },
+                          { label: 'C/S', value: 'White and quiet', id: 'slitlamp-cs' },
+                          { label: 'Cornea', value: 'Edema, Corneal dystrophy', id: 'slitlamp-cornea' },
+                          { label: 'AC', value: 'Deep and quiet', id: 'slitlamp-ac' },
+                          { label: 'Iris', value: 'Round and reactive', id: 'slitlamp-iris' },
+                          { label: 'Lens', value: '+1 Nuclear sclerosis', id: 'slitlamp-lens' },
+                          { label: 'Vitreous', value: 'Normal', id: 'slitlamp-vitreous' },
+                        ].map((item) => (
+                          <div key={item.label} className="exam-grid">
+                            <div className="flex gap-1 items-center">
+                              <span className="exam-label">{item.label}</span>
+                              <input type="text" id={`${item.id}-right`} defaultValue={item.value} className="exam-field flex-1" />
+                            </div>
+                            <div className="flex justify-center">
+                              <input
+                                type="checkbox"
+                                id={`${item.id}-checkbox`}
+                                className="h-3 w-3"
+                                onChange={(e) => {
+                                  const rightValue = (document.getElementById(`${item.id}-right`) as HTMLInputElement).value;
+                                  const leftInput = document.getElementById(`${item.id}-left`) as HTMLInputElement;
+                                  if (e.target.checked) {
+                                    leftInput.value = rightValue;
+                                  } else {
+                                    leftInput.value = '';
+                                  }
+                                }}
+                              />
+                            </div>
+                            <div>
+                              <input type="text" id={`${item.id}-left`} defaultValue={item.value} className="exam-field w-full" />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div className="flex justify-center">
-                      <input type="checkbox" id="external-checkbox" className="h-3 w-3" onChange={(e) => {
-                        const rightValue = (document.getElementById('external-right') as HTMLInputElement).value;
-                        const leftInput = document.getElementById('external-left') as HTMLInputElement;
-                        if (e.target.checked) {
-                          leftInput.value = rightValue;
-                        } else {
-                          leftInput.value = '';
-                        }
-                      }} />
+                    <hr className="w-full" />
+                    <div className="exam-section">
+                      <h3 className="exam-header">Fundus</h3>
+                      <div className="flex justify-between">
+                        <span>Right</span>
+                        <span>Left</span>
+                      </div>
+                      <div className="space-y-0.5">
+                        {[
+                          { label: 'Disc', value: 'Normal', id: 'fundus-disc' },
+                          { label: 'C/D Ratio', value: '0.3', id: 'fundus-cdratio' },
+                          { label: 'Macula', value: 'Normal', id: 'fundus-macula' },
+                          { label: 'Vessels', value: 'Normal', id: 'fundus-vessels' },
+                          { label: 'Periph', value: 'Normal', id: 'fundus-periph' },
+                        ].map((item) => (
+                          <div key={item.label} className="exam-grid">
+                            <div className="flex gap-1 items-center">
+                              <span className="exam-label">{item.label}</span>
+                              <input type="text" id={`${item.id}-right`} defaultValue={item.value} className="exam-field flex-1" />
+                            </div>
+                            <div className="flex justify-center">
+                              <input
+                                type="checkbox"
+                                id={`${item.id}-checkbox`}
+                                className="h-3 w-3"
+                                onChange={(e) => {
+                                  const rightValue = (document.getElementById(`${item.id}-right`) as HTMLInputElement).value;
+                                  const leftInput = document.getElementById(`${item.id}-left`) as HTMLInputElement;
+                                  if (e.target.checked) {
+                                    leftInput.value = rightValue;
+                                  } else {
+                                    leftInput.value = '';
+                                  }
+                                }}
+                              />
+                            </div>
+                            <div>
+                              <input type="text" id={`${item.id}-left`} defaultValue={item.value} className="exam-field w-full" />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div>
-                      <input type="text" id="external-left" defaultValue="Normal" className="exam-field w-full" />
-                    </div>
-                  </div>
-                </div>
-                <hr className="w-full" />
-                <div className="exam-section">
-                  <h3 className="exam-header">Slit Lamp</h3>
-                  <div className="flex justify-between">
-                    <span>Right</span>
-                    <span>Left</span>
-                  </div>
-                  <div className="space-y-0.5">
-                    {[
-                      { label: 'L/L', value: 'Normal', id: 'slitlamp-ll' },
-                      { label: 'C/S', value: 'White and quiet', id: 'slitlamp-cs' },
-                      { label: 'Cornea', value: 'Edema, Corneal dystrophy', id: 'slitlamp-cornea' },
-                      { label: 'AC', value: 'Deep and quiet', id: 'slitlamp-ac' },
-                      { label: 'Iris', value: 'Round and reactive', id: 'slitlamp-iris' },
-                      { label: 'Lens', value: '+1 Nuclear sclerosis', id: 'slitlamp-lens' },
-                      { label: 'Vitreous', value: 'Normal', id: 'slitlamp-vitreous' },
-                    ].map((item) => (
-                      <div key={item.label} className="exam-grid">
-                        <div className="flex gap-1 items-center">
-                          <span className="exam-label">{item.label}</span>
-                          <input type="text" id={`${item.id}-right`} defaultValue={item.value} className="exam-field flex-1" />
+                    <hr className="w-full" />
+                  </>
+                ) : (
+                  // Clinic Visit View based on image
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Left Column */}
+                    <div className="space-y-4">
+                      {/* Current Medical Condition */}
+                      <div className="border rounded">
+                        <div className="bg-gray-200 p-1 font-semibold flex justify-between items-center">
+                          <span>Current medical condition</span>
+                          <button className="text-blue-600 text-xs">+ Add</button>
                         </div>
-                        <div className="flex justify-center">
-                          <input
-                            type="checkbox"
-                            id={`${item.id}-checkbox`}
-                            className="h-3 w-3"
-                            onChange={(e) => {
-                              const rightValue = (document.getElementById(`${item.id}-right`) as HTMLInputElement).value;
-                              const leftInput = document.getElementById(`${item.id}-left`) as HTMLInputElement;
-                              if (e.target.checked) {
-                                leftInput.value = rightValue;
-                              } else {
-                                leftInput.value = '';
-                              }
-                            }}
-                          />
-                        </div>
-                        <div>
-                          <input type="text" id={`${item.id}-left`} defaultValue={item.value} className="exam-field w-full" />
+                        <div className="p-2">
+                          <div className="grid grid-cols-3 gap-1 text-xs mb-1">
+                            <span>DISEASE/CONDITION</span>
+                            <span>START DATE</span>
+                            <span>COMMENT</span>
+                          </div>
+                          <div className="grid grid-cols-3 gap-1">
+                            <input type="text" className="exam-field w-full" />
+                            <input type="date" className="exam-field w-full" />
+                            <input type="text" className="exam-field w-full" />
+                          </div>
+                          {/* Add more rows as needed */}
                         </div>
                       </div>
-                    ))}
-                  </div>
-                </div>
-                <hr className="w-full" />
-                <div className="exam-section">
-                  <h3 className="exam-header">Fundus</h3>
-                  <div className="flex justify-between">
-                    <span>Right</span>
-                    <span>Left</span>
-                  </div>
-                  <div className="space-y-0.5">
-                    {[
-                      { label: 'Disc', value: 'Normal', id: 'fundus-disc' },
-                      { label: 'C/D Ratio', value: '0.3', id: 'fundus-cdratio' },
-                      { label: 'Macula', value: 'Normal', id: 'fundus-macula' },
-                      { label: 'Vessels', value: 'Normal', id: 'fundus-vessels' },
-                      { label: 'Periph', value: 'Normal', id: 'fundus-periph' },
-                    ].map((item) => (
-                      <div key={item.label} className="exam-grid">
-                        <div className="flex gap-1 items-center">
-                          <span className="exam-label">{item.label}</span>
-                          <input type="text" id={`${item.id}-right`} defaultValue={item.value} className="exam-field flex-1" />
-                        </div>
-                        <div className="flex justify-center">
-                          <input
-                            type="checkbox"
-                            id={`${item.id}-checkbox`}
-                            className="h-3 w-3"
-                            onChange={(e) => {
-                              const rightValue = (document.getElementById(`${item.id}-right`) as HTMLInputElement).value;
-                              const leftInput = document.getElementById(`${item.id}-left`) as HTMLInputElement;
-                              if (e.target.checked) {
-                                leftInput.value = rightValue;
-                              } else {
-                                leftInput.value = '';
-                              }
-                            }}
-                          />
-                        </div>
-                        <div>
-                          <input type="text" id={`${item.id}-left`} defaultValue={item.value} className="exam-field w-full" />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <hr className="w-full" />
-                
 
+                      {/* Past Medical Condition */}
+                      <div className="border rounded">
+                        <div className="bg-gray-200 p-1 font-semibold flex justify-between items-center">
+                          <span>Past medical condition</span>
+                          <button className="text-blue-600 text-xs">+ Add</button>
+                        </div>
+                        <div className="p-2">
+                          <div className="grid grid-cols-4 gap-1 text-xs mb-1">
+                            <span>DISEASE/CONDITION</span>
+                            <span>START DATE</span>
+                            <span>END DATE</span>
+                            <span>COMMENT</span>
+                          </div>
+                          <div className="grid grid-cols-4 gap-1">
+                            <input type="text" className="exam-field w-full" />
+                            <input type="date" className="exam-field w-full" />
+                            <input type="date" className="exam-field w-full" />
+                            <input type="text" className="exam-field w-full" />
+                          </div>
+                          {/* Add more rows as needed */}
+                        </div>
+                      </div>
+
+                      {/* Tobacco Use */}
+                      <div className="border rounded">
+                        <div className="bg-gray-200 p-1 font-semibold">Tobacco use</div>
+                        <div className="p-2 space-y-2">
+                          <div className="flex items-center gap-4">
+                            <span className="text-xs">SMOKE CIGARETTES?</span>
+                            <label className="flex items-center gap-1 text-xs"><input type="checkbox" /> Yes</label>
+                            <label className="flex items-center gap-1 text-xs"><input type="checkbox" /> No</label>
+                            <label className="flex items-center gap-1 text-xs"><input type="checkbox" /> Never</label>
+                          </div>
+                          <div className="grid grid-cols-[auto_1fr_1fr] gap-x-2 gap-y-1 items-center text-xs">
+                            <span>CURRENT</span>
+                            <div className="flex gap-1"><label>Packs/day:</label><input type="text" className="exam-field flex-1" /></div>
+                            <div className="flex gap-1"><label># of Years:</label><input type="text" className="exam-field flex-1" /></div>
+                            <span>PAST</span>
+                            <div className="flex gap-1"><label>Quit Date:</label><input type="date" className="exam-field flex-1" /></div>
+                            <div className="flex gap-1"><label>Packs/day:</label><input type="text" className="exam-field flex-1" /></div>
+                            <span></span> {/* Empty cell for alignment */}
+                            <span></span> {/* Empty cell for alignment */}
+                            <div className="flex gap-1"><label># of Years:</label><input type="text" className="exam-field flex-1" /></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Alcohol Use */}
+                      <div className="border rounded">
+                        <div className="bg-gray-200 p-1 font-semibold">Alcohol use</div>
+                        <div className="p-2 space-y-2">
+                          <div className="flex items-center gap-4">
+                            <span className="text-xs">DRINK ALCOHOL?</span>
+                            <label className="flex items-center gap-1 text-xs"><input type="checkbox" /> Yes</label>
+                            <label className="flex items-center gap-1 text-xs"><input type="checkbox" /> No</label>
+                          </div>
+                          <div className="flex items-center gap-4">
+                             <span className="text-xs">ALCOHOL TYPE</span>
+                             <label className="flex items-center gap-1 text-xs"><input type="checkbox" /> Beer</label>
+                             <label className="flex items-center gap-1 text-xs"><input type="checkbox" /> Wine</label>
+                             <label className="flex items-center gap-1 text-xs"><input type="checkbox" /> Liquor</label>
+                             <div className="flex gap-1 items-center ml-auto"><label className="text-xs">Drinks/week:</label><input type="text" className="exam-field w-16" /></div>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Immunization */}
+                      <div className="border rounded">
+                        <div className="bg-gray-200 p-1 font-semibold flex justify-between items-center">
+                          <span>Immunization</span>
+                          <button className="text-blue-600 text-xs">+ Add</button>
+                        </div>
+                        <div className="p-2">
+                          <div className="grid grid-cols-4 gap-1 text-xs mb-1">
+                            <span>VACCINE</span>
+                            <span>DATE GIVEN</span>
+                            <span>LOCATION/FACILITY</span>
+                            <span>NEXT DOSE DUE</span>
+                          </div>
+                          <div className="grid grid-cols-4 gap-1">
+                            <input type="text" className="exam-field w-full" />
+                            <input type="date" className="exam-field w-full" />
+                            <input type="text" className="exam-field w-full" />
+                            <input type="date" className="exam-field w-full" />
+                          </div>
+                           {/* Add more rows as needed */}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Column */}
+                    <div className="space-y-4">
+                      {/* Surgeries */}
+                      <div className="border rounded">
+                        <div className="bg-gray-200 p-1 font-semibold flex justify-between items-center">
+                          <span>Surgeries</span>
+                          <button className="text-blue-600 text-xs">+ Add</button>
+                        </div>
+                        <div className="p-2">
+                          <div className="grid grid-cols-3 gap-1 text-xs mb-1">
+                            <span>TYPE (specify left/right)</span>
+                            <span>DATE</span>
+                            <span>LOCATION/FACILITY</span>
+                          </div>
+                          <div className="grid grid-cols-3 gap-1">
+                            <input type="text" className="exam-field w-full" />
+                            <input type="date" className="exam-field w-full" />
+                            <input type="text" className="exam-field w-full" />
+                          </div>
+                           {/* Add more rows as needed */}
+                        </div>
+                      </div>
+
+                      {/* Family History */}
+                      <div className="border rounded">
+                        <div className="bg-gray-200 p-1 font-semibold flex justify-between items-center">
+                          <span>Family history</span>
+                          <button className="text-blue-600 text-xs">+ Add</button>
+                        </div>
+                        <div className="p-2 space-y-2">
+                           <div className="flex items-center gap-4">
+                             <span className="text-xs">PATIENT ADOPTED?</span>
+                             <label className="flex items-center gap-1 text-xs"><input type="checkbox" /> Yes</label>
+                             <label className="flex items-center gap-1 text-xs"><input type="checkbox" /> No</label>
+                           </div>
+                           <div className="grid grid-cols-[auto_1fr_1fr] gap-x-4 gap-y-1 text-xs">
+                             <span>RELATIONSHIP</span>
+                             <span></span> {/* Header Spacer */}
+                             <span>MEDICAL HISTORY</span>
+
+                             <span>Mother</span>
+                             <div className="flex gap-2"><label className="flex items-center gap-1"><input type="checkbox" /> Biological</label> <label className="flex items-center gap-1"><input type="checkbox" /> Adoptive</label></div>
+                             <input type="text" className="exam-field w-full" />
+
+                             <span>Father</span>
+                             <div className="flex gap-2"><label className="flex items-center gap-1"><input type="checkbox" /> Biological</label> <label className="flex items-center gap-1"><input type="checkbox" /> Adoptive</label></div>
+                             <input type="text" className="exam-field w-full" />
+
+                             <span>Brother</span>
+                             <div className="flex gap-2"><label className="flex items-center gap-1"><input type="checkbox" /> Biological</label> <label className="flex items-center gap-1"><input type="checkbox" /> Adoptive</label></div>
+                             <input type="text" className="exam-field w-full" />
+
+                             <span>Sister</span>
+                             <div className="flex gap-2"><label className="flex items-center gap-1"><input type="checkbox" /> Biological</label> <label className="flex items-center gap-1"><input type="checkbox" /> Adoptive</label></div>
+                             <input type="text" className="exam-field w-full" />
+                           </div>
+                        </div>
+                      </div>
+
+                      {/* Medication */}
+                      <div className="border rounded">
+                        <div className="bg-gray-200 p-1 font-semibold flex justify-between items-center">
+                          <span>Medication</span>
+                          <button className="text-blue-600 text-xs">+ Add</button>
+                        </div>
+                        <div className="p-2">
+                          <div className="grid grid-cols-3 gap-1 text-xs mb-1">
+                            <span>MEDICATIONS</span>
+                            <span>DOSE</span>
+                            <span>TIMES PER DAY</span>
+                          </div>
+                          <div className="grid grid-cols-3 gap-1">
+                            <input type="text" className="exam-field w-full" />
+                            <input type="text" className="exam-field w-full" />
+                            <input type="text" className="exam-field w-full" />
+                          </div>
+                           {/* Add more rows as needed */}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                
                 <div>
                   <div style={{textAlign: 'left'}}>
                     <img
@@ -264,32 +459,35 @@ const ExamSection = () => {
           
           <ResizableHandle />
           
-          <ResizablePanel defaultSize={35} minSize={20}>
-            <div className="p-2">
-              <div className="flex border-b border-gray-200">
-                <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 gap-1 text-gray-600">
-                  <span className="text-xs">Base</span>
-                </button>
-                <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 gap-1 text-gray-600">
-                  <span className="text-xs">Addl</span>
-                </button>
-                <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 relative before:absolute before:top-0 before:left-0 before:right-0 before:h-0.5 before:bg-blue-500">
-                  <span className="text-xs text-blue-600">Cornea</span>
-                </button>
+          {/* Conditionally render the right panel only for Eye Exam */}
+          {examType === "Eye Exam" && (
+            <ResizablePanel defaultSize={35} minSize={20}>
+              <div className="p-2">
+                <div className="flex border-b border-gray-200">
+                  <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 gap-1 text-gray-600">
+                    <span className="text-xs">Base</span>
+                  </button>
+                  <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 gap-1 text-gray-600">
+                    <span className="text-xs">Addl</span>
+                  </button>
+                  <button className="inline-flex items-center px-2 py-0.5 text-sm border-r border-gray-200 relative before:absolute before:top-0 before:left-0 before:right-0 before:h-0.5 before:bg-blue-500">
+                    <span className="text-xs text-blue-600">Cornea</span>
+                  </button>
+                </div>
+                <h3 className="text-xs font-bold mb-2">Conditions</h3> {/* Removed conditional header */}
+                <ConditionList
+                  conditionsData={conditionsData}
+                  checkedConditions={checkedConditions}
+                  handleCheckboxChange={handleCheckboxChange}
+                />
+                <img
+                  src="/lovable-uploads/examimge.png"
+                  alt="Clock"
+                  className="h-24 w-full object-contain"
+                />
               </div>
-              <h3 className="text-xs font-bold mb-2">Conditions</h3>
-              <ConditionList
-                conditionsData={conditionsData}
-                checkedConditions={checkedConditions}
-                handleCheckboxChange={handleCheckboxChange}
-              />
-              <img
-                src="/lovable-uploads/examimge.png"
-                alt="Clock"
-                className="h-24 w-full object-contain"
-              />
-            </div>
-          </ResizablePanel>
+            </ResizablePanel>
+          )}
         </ResizablePanelGroup>
       </div>
     </div>
